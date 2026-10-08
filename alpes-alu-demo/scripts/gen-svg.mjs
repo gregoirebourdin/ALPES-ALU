@@ -25,6 +25,17 @@ function rdp(pts, eps) {
 }
 const fmt = (n) => (Math.round(n * 10) / 10).toString();
 const pathOf = (pts) => 'M' + pts.map((p) => `${fmt(p[0])} ${fmt(p[1])}`).join('L');
+// tracé compact (entiers, coordonnées relatives, points doublons retirés) pour les courbes de niveau
+const pathRel = (pts) => {
+  const q = pts.map(([x, y]) => [Math.round(x), Math.round(y)]).filter((p, i, a) => i === 0 || p[0] !== a[i - 1][0] || p[1] !== a[i - 1][1]);
+  if (q.length < 2) return '';
+  let d = `M${q[0][0]} ${q[0][1]}l`;
+  for (let i = 1; i < q.length; i++) {
+    const dx = q[i][0] - q[i - 1][0], dy = q[i][1] - q[i - 1][1];
+    d += (i > 1 && dx >= 0 ? ' ' : '') + dx + (dy >= 0 ? ' ' : '') + dy;
+  }
+  return d;
+};
 
 // --- 1. ligne de crête -------------------------------------------------------
 // Relevé à la main sur une grille posée sur la photo du hero (recadrage bureau,
@@ -152,7 +163,7 @@ function contours() {
           else line.unshift(p);
         }
       }
-      if (line.length > 6) out.push({ L, d: pathOf(rdp(line, 1.1)) });
+      if (line.length > 6) out.push({ L, d: pathRel(rdp(line, 1.6)) });
     }
   }
   return { levels, lines: out };

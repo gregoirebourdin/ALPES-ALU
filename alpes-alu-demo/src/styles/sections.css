@@ -88,6 +88,7 @@
   grid-template-rows: auto 18px auto auto;
   gap: 14px;
   align-content: start;
+  container-type: inline-size;
 }
 .repere__value {
   display: flex;
@@ -96,7 +97,8 @@
   font-family: var(--f-display);
   font-weight: 860;
   font-stretch: 110%;
-  font-size: clamp(3.6rem, 2.4rem + 4.4vw, 8.2rem);
+  /* plafonnée par la largeur de la colonne (« RGE » et son libellé tiennent sur une ligne) */
+  font-size: min(clamp(3.6rem, 2.4rem + 4.4vw, 8.2rem), 27cqi);
   line-height: 0.82;
   letter-spacing: -0.04em;
   color: var(--graphite);
@@ -353,6 +355,20 @@
   background: var(--jaune);
   transform: translateX(calc(var(--p, 0.11) * (var(--bar-w, 600px) - 4px))) skewX(-12deg);
 }
+/* Sans JS ou en mouvement réduit, pas de défilement horizontal : les neuf cartes en grille */
+@media (min-width: 1024px) {
+  :is(html:not(.js), html.reduce) .metiers__track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: auto;
+  }
+  :is(html:not(.js), html.reduce) .metier {
+    width: auto;
+  }
+  :is(html:not(.js), html.reduce) .metiers__progress {
+    display: none;
+  }
+}
 @media (max-width: 1023px) {
   .metiers__pin {
     min-height: 0;
@@ -448,7 +464,7 @@
   opacity: var(--step-o, 1);
   transition: opacity 0.5s var(--ease-power3);
 }
-.js .step {
+.js:not(.reduce) .step {
   --step-o: 0.28;
 }
 .js .step.is-active {
@@ -686,6 +702,7 @@
   margin-bottom: clamp(56px, 8vw, 128px);
 }
 .atelier__title {
+  min-width: 0;
   font-family: var(--f-display);
   font-weight: 860;
   font-stretch: var(--stretch, 108%);
@@ -698,6 +715,12 @@
   display: inline-block;
   color: var(--jaune);
   white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .atelier__title {
+    --stretch: 84%;
+    font-size: min(2.2rem, calc((100vw - 32px) / 10.6));
+  }
 }
 @media (max-width: 600px) {
   .atelier__title {
@@ -1751,6 +1774,10 @@
     grid-auto-rows: clamp(150px, 34vw, 280px);
   }
 }
+.bento__note {
+  display: none;
+  margin: 0 0 16px;
+}
 @media (max-width: 560px) {
   .bento {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1763,6 +1790,9 @@
   }
   .tile__cap .valider {
     display: none;
+  }
+  .bento__note {
+    display: block;
   }
 }
 
@@ -1921,6 +1951,11 @@
 .zone__head {
   display: grid;
   gap: 24px;
+  container-type: inline-size;
+}
+/* « Briançonnais » ne se coupe pas : le titre se règle sur la largeur de sa colonne */
+.zone__head .h2 {
+  font-size: min(var(--fs-h2), 14.4cqi);
 }
 .zone__list {
   display: grid;
@@ -2112,6 +2147,8 @@
   }
 }
 .rallye {
+  --k: var(--gris);
+  --kn: var(--neige);
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(28px, 4vw, 72px);
@@ -2303,8 +2340,18 @@
   .appel__coords {
     grid-template-columns: minmax(0, 1fr);
   }
+  /* sur téléphone, la cornière prend toute la largeur et le libellé tient sur une ligne */
+  .appel__lockup {
+    display: grid;
+    justify-self: stretch;
+  }
   .btn-giant {
-    padding-inline: 28px 52px;
+    padding-inline: 26px 56px;
+    font-size: clamp(1.15rem, 0.7rem + 2.6vw, 1.5rem);
+    white-space: nowrap;
+  }
+  .appel__promise > span[aria-hidden] {
+    display: none;
   }
 }
 

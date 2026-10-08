@@ -16,7 +16,7 @@
    "h": 1484,
    "widths": [
     640,
-    942
+    760
    ],
    "lqip": "data:image/webp;base64,UklGRmwBAABXRUJQVlA4IGABAADwCQCdASogADIAPuleqE2pJSQiMBv8ASAdCWIAs7NVWAU9dCZqgEVOQRPJaPPozw7tI/urS1pMBh/uxkyLyltpuzTh+4+QFUuubbhDIqyVdLv2PJ8CZn+gAP7ejwF1oiWWG2XkRlg3fwN/T2oHSOVm/3w4SzaoeW/hLsuVuefr2/ig6Jjlaow9sae+LKOv1b2qwacx5+0bYl9pB6cn/RRT1iTWd5We3lje5FM9DFnwvFcXihmhDZHcarAxRK81U9jbPUIAysgQd8ScTi052kIiZNhM8odEZFIA3cWX0a5+9OenoxaF4iFS5zfQePCpvPwwqOD3mNuAQ1lUGN7+SE7A+GuuVrC4XFST6ME/Eor3AM4oxolyIQxzo3nG74uNg4Q/0qqGfjAlHiLM/wgTRsIYvM0G0yFWpzFyJaH7cRlsKFKJuC0LpPhC9MroZLlKZaEDl7OU4AeCEl7m6oKIfJAA"
   }
@@ -426,6 +426,18 @@
    1600
   ],
   "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBQCdASogABgAPu1qrVEppaQiqAqpMB2JYgC1GyGExL912W4QTH0hgo6PH6Ds073FSADN8P/Ts3oryJQg8LWkRQv8piNaJOktfPjeXu007lKS/07U/DCO8vsDX1UNszZewQvT0j9fZcTQPlobq3rMIu2OalS6LGf5JKn/YVKkmc+8itffiNApIFZKNSDyv2B4PO2DEmb5MaN2DklfVFu6tonUiys/rUYefIG6yBtAjVWAAAA=",
+  "color": "#080808"
+ },
+ "g-escalier-galva": {
+  "alt": "Grand escalier extérieur en acier galvanisé, marches en caillebotis et garde-corps.",
+  "w": 1914,
+  "h": 983,
+  "widths": [
+   640,
+   1280,
+   1914
+  ],
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASogABAAPu1iqk2ppaQiMAgBMB2JZQDE2CHTHwWB879zp6IAAP1NlefT41YJv2w/VGw0OtiYqp0JKSrzODFx3amctg9i3HQsc+/5uLX8HQiUTMrp9gI30Gym+35uuPaa70S17jHeZmqzQOAP3c6U2hfR+X3+kAMzElAAAA==",
   "color": "#080808"
  },
  "g-verriere": {

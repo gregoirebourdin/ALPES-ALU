@@ -5,8 +5,8 @@ import { scrollVelocity, lenis } from './core';
 /* ---------- Titres : lignes masquées ---------- */
 export function initTitles() {
   if (reduceMotion) return;
-  qsa('[data-split="lines"]').forEach((el) => {
-    if (el.closest('.hero')) return;
+  // découpage paresseux : chaque titre est découpé en lignes à l'approche, pas au démarrage
+  const split = (el: HTMLElement) =>
     SplitText.create(el, {
       type: 'lines',
       mask: 'lines',
@@ -21,6 +21,18 @@ export function initTitles() {
           scrollTrigger: { trigger: el, start: 'top 86%', toggleActions: 'play none none none' },
         }),
     });
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        io.unobserve(e.target);
+        split(e.target as HTMLElement);
+      }
+    },
+    { rootMargin: '0px 0px 120% 0px' },
+  );
+  qsa('[data-split="lines"]').forEach((el) => {
+    if (!el.closest('.hero')) io.observe(el);
   });
   qsa('.section__lead, .step__text').forEach((el) => {
     if (el.closest('.hero')) return;
@@ -261,9 +273,26 @@ export function initAssembly() {
 /* ---------- 07 · Le mur de l'atelier ---------- */
 export function initAtelier() {
   const title = qs('.atelier__title');
+  const place = title ? qs('.atelier__place', title) : null;
+  // chasse finale : la plus large qui tient sur une ligne (« L'Argentière-la-Bessée. » ne se coupe pas)
+  const fitStretch = () => {
+    if (!title || !place) return 108;
+    const prev = title.style.getPropertyValue('--stretch');
+    title.style.setProperty('--stretch', '76%');
+    const a = place.getBoundingClientRect().width;
+    title.style.setProperty('--stretch', '108%');
+    const b = place.getBoundingClientRect().width;
+    title.style.setProperty('--stretch', prev);
+    const avail = title.getBoundingClientRect().width;
+    return 76 + 32 * clamp((avail - a) / Math.max(1, b - a));
+  };
   if (title && !reduceMotion) {
-    gsap.fromTo(title, { '--stretch': '76%' }, { '--stretch': '108%', duration: 1.6, ease: 'power3.out', scrollTrigger: { trigger: title, start: 'top 80%', toggleActions: 'play none none none' } });
+    let played = false;
+    gsap.fromTo(title, { '--stretch': '76%' }, { '--stretch': () => `${fitStretch().toFixed(1)}%`, duration: 1.6, ease: 'power3.out', onComplete: () => (played = true), scrollTrigger: { trigger: title, start: 'top 80%', toggleActions: 'play none none none' } });
     gsap.from(title, { opacity: 0, y: 30, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: title, start: 'top 80%', toggleActions: 'play none none none' } });
+    window.addEventListener('resize', () => played && title.style.setProperty('--stretch', `${fitStretch().toFixed(1)}%`));
+  } else if (title) {
+    title.style.setProperty('--stretch', `${fitStretch().toFixed(1)}%`);
   }
   const frames = qsa('.pane__frame, .portrait__frame');
   frames.forEach((fr) => {

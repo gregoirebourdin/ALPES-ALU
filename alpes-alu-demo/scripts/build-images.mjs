@@ -54,12 +54,13 @@ function widthsFor(w) {
   return list;
 }
 
-async function encodeSet(id, buf, info, widths, { sharpen = 0.5 } = {}) {
+async function encodeSet(id, buf, info, widths, { sharpen = 0.5, q = 0 } = {}) {
   const jobs = [];
   for (const w of widths) {
     const base = sharp(buf, { raw: info }).resize(w, null, { kernel: 'lanczos3' }).sharpen({ sigma: w <= 640 ? 0.4 : sharpen });
-    jobs.push(base.clone().avif({ quality: w >= 1920 ? 48 : 52, effort: 4, chromaSubsampling: '4:2:0' }).toFile(join(OUT, `${id}-${w}.avif`)));
-    jobs.push(base.clone().webp({ quality: 76, effort: 5, smartSubsample: true }).toFile(join(OUT, `${id}-${w}.webp`)));
+    // q : écart de qualité propre à la photo (négatif pour une photo voilée, comme celle du hero)
+    jobs.push(base.clone().avif({ quality: (w >= 1920 ? 48 : 52) + q, effort: 4, chromaSubsampling: '4:2:0' }).toFile(join(OUT, `${id}-${w}.avif`)));
+    jobs.push(base.clone().webp({ quality: 76 + q, effort: 5, smartSubsample: true }).toFile(join(OUT, `${id}-${w}.webp`)));
   }
   await Promise.all(jobs);
 }
@@ -93,7 +94,7 @@ async function main() {
     const t0 = Date.now();
     const { data, info } = await loadGraded(p.src, p.crop, p.grade);
     const widths = widthsFor(info.width);
-    await encodeSet(p.id, data, info, widths);
+    await encodeSet(p.id, data, info, widths, { q: p.q || 0 });
     const meta = {
       alt: p.alt,
       w: info.width,
@@ -105,8 +106,10 @@ async function main() {
     if (p.credit) meta.credit = p.credit;
     if (p.mobile) {
       const m = await loadGraded(p.src, p.mobile, p.grade);
-      const mw = widthsFor(m.info.width);
-      await encodeSet(`${p.id}-m`, m.data, m.info, mw);
+      // mobileMax : largeur maximale de la version téléphone (photo voilée : inutile d'aller au-delà)
+      const mw = widthsFor(m.info.width).filter((w) => !p.mobileMax || w <= p.mobileMax);
+      if (p.mobileMax && !mw.includes(p.mobileMax) && m.info.width > p.mobileMax) mw.push(p.mobileMax);
+      await encodeSet(`${p.id}-m`, m.data, m.info, mw, { q: p.q || 0 });
       meta.mobile = { w: m.info.width, h: m.info.height, widths: mw, lqip: await lqip(m.data, m.info) };
     }
     if (p.duotone) {

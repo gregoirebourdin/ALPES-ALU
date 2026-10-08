@@ -11,6 +11,8 @@ export const PHOTOS = [
     crop: [0, 0.02, 1, 0.9], mobile: [0.27, 0, 0.46, 1],
     alt: "Un grand vitrage suspendu à une grue au-dessus des toits, guidé par l'équipe Alpes Alu, montagnes en arrière-plan.",
     priority: true,
+    q: -10, // photo voilée sous le texte : on peut la compresser davantage
+    mobileMax: 760,
   },
   // Métiers
   { id: 'm-fenetres', src: U + '2021/10/alpes-alu-fenetre-renovation-sur-mesure.jpeg', alt: 'Fenêtre de rénovation sur mesure posée dans un mur en pierre.' },
@@ -51,6 +53,7 @@ export const PHOTOS = [
   { id: 'g-rampe-ext', src: U + '2021/10/alpes-alu-rampe-et-escalier-sur-mesure.jpeg', alt: 'Rampe et escalier extérieurs sur mesure, face à la vallée.' },
   { id: 'g-escalier-facade', src: U + '2021/11/alpes-alu-fabrication-pose-structure-escalier-metal.jpg', alt: 'Escalier extérieur en acier fixé sur une façade en bois.' },
   { id: 'g-local-velo', src: U + '2021/10/alpes-alu-structure-exterieure-local-velo.jpg', alt: 'Local vélo en structure acier à panneaux découpés.' },
+  { id: 'g-escalier-galva', src: U + '2021/11/alpes-alu-fabrication-installation-reglage-escalier-metallique.jpg', alt: 'Grand escalier extérieur en acier galvanisé, marches en caillebotis et garde-corps.' },
   { id: 'g-verriere', src: U + '2021/10/alpes-alu-conception-verriere-interieur-montant-alu.jpg', alt: "Verrière d'atelier noire dans un intérieur en bois." },
   { id: 'g-veranda', src: U + '2021/11/alpes-alu-fabrication-installation-veranda-metal.jpg', alt: 'Véranda métallique en cours de pose contre une maison.' },
   { id: 'g-grue-immeuble', src: U + '2021/10/alpes-alu-chantier-pose-vitres-chantier.jpeg', alt: "Grue en position devant un immeuble pour une pose de vitrage." },

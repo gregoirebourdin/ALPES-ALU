@@ -32,6 +32,11 @@
 .site-header.is-hidden {
   transform: translate3d(0, calc(-100% - 4px), 0);
 }
+@media (max-height: 500px) and (orientation: landscape) {
+  .sav-band {
+    display: none;
+  }
+}
 
 .sav-band {
   display: flex;

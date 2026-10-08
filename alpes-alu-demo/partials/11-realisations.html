@@ -9,8 +9,10 @@
     </header>
 
     <div class="filtres" role="group" aria-label="Filtrer les réalisations">
-      <button type="button" class="filtre is-on" data-filter="tout" aria-pressed="true">Tout<span class="filtre__n mono">20</span></button><button type="button" class="filtre" data-filter="fenetres" aria-pressed="false">Fenêtres et baies<span class="filtre__n mono">4</span></button><button type="button" class="filtre" data-filter="portes" aria-pressed="false">Portes et garages<span class="filtre__n mono">4</span></button><button type="button" class="filtre" data-filter="portails" aria-pressed="false">Portails et clôtures<span class="filtre__n mono">2</span></button><button type="button" class="filtre" data-filter="escaliers" aria-pressed="false">Escaliers et garde-corps<span class="filtre__n mono">4</span></button><button type="button" class="filtre" data-filter="verandas" aria-pressed="false">Vérandas et verrières<span class="filtre__n mono">3</span></button><button type="button" class="filtre" data-filter="chantiers" aria-pressed="false">Chantiers<span class="filtre__n mono">3</span></button>
+      <button type="button" class="filtre is-on" data-filter="tout" aria-pressed="true">Tout<span class="filtre__n mono">20</span></button><button type="button" class="filtre" data-filter="fenetres" aria-pressed="false">Fenêtres et baies<span class="filtre__n mono">4</span></button><button type="button" class="filtre" data-filter="portes" aria-pressed="false">Portes et garages<span class="filtre__n mono">4</span></button><button type="button" class="filtre" data-filter="portails" aria-pressed="false">Portails et clôtures<span class="filtre__n mono">2</span></button><button type="button" class="filtre" data-filter="escaliers" aria-pressed="false">Escaliers et garde-corps<span class="filtre__n mono">5</span></button><button type="button" class="filtre" data-filter="verandas" aria-pressed="false">Vérandas et verrières<span class="filtre__n mono">3</span></button><button type="button" class="filtre" data-filter="chantiers" aria-pressed="false">Chantiers<span class="filtre__n mono">2</span></button>
     </div>
+
+    <p class="bento__note"><span class="valider">Lieux des réalisations à préciser avec Alpes Alu</span></p>
 
     <ul class="bento">
       <li class="tile t-xl" data-cat="fenetres">
@@ -20,12 +22,12 @@
         </button>
         <p class="tile__cap"><span class="tile__cat mono">Fenêtres et baies</span><span class="tile__txt">Baie vitrée toute hauteur sur jardin</span><span class="valider">Lieu</span></p>
       </li>
-      <li class="tile t-wide" data-cat="chantiers">
-        <button type="button" class="tile__btn" data-index="1" data-cursor="Voir" aria-label="Agrandir : Pose d’un vitrage à la grue" aria-haspopup="dialog" aria-controls="visionneuse">
-          <x-photo id="hero" art="off" sizes="(min-width: 1024px) 50vw, 92vw"></x-photo>
+      <li class="tile t-wide" data-cat="escaliers">
+        <button type="button" class="tile__btn" data-index="1" data-cursor="Voir" aria-label="Agrandir : Escalier galvanisé et garde-corps en extérieur" aria-haspopup="dialog" aria-controls="visionneuse">
+          <x-photo id="g-escalier-galva" sizes="(min-width: 1024px) 50vw, 92vw"></x-photo>
           <span class="tile__zoom" aria-hidden="true"><svg><use href="#i-loupe"></use></svg></span>
         </button>
-        <p class="tile__cap"><span class="tile__cat mono">Chantiers</span><span class="tile__txt">Pose d’un vitrage à la grue</span><span class="valider">Lieu</span></p>
+        <p class="tile__cap"><span class="tile__cat mono">Escaliers et garde-corps</span><span class="tile__txt">Escalier galvanisé et garde-corps en extérieur</span><span class="valider">Lieu</span></p>
       </li>
       <li class="tile t-tall" data-cat="escaliers">
         <button type="button" class="tile__btn" data-index="2" data-cursor="Voir" aria-label="Agrandir : Rampe d’escalier dans un chalet" aria-haspopup="dialog" aria-controls="visionneuse">
@@ -91,11 +93,11 @@
         <p class="tile__cap"><span class="tile__cat mono">Fenêtres et baies</span><span class="tile__txt">Coulissant posé en rénovation</span><span class="valider">Lieu</span></p>
       </li>
       <li class="tile t-wide" data-cat="verandas">
-        <button type="button" class="tile__btn" data-index="11" data-cursor="Voir" aria-label="Agrandir : Couverture vitrée en façade de chalet" aria-haspopup="dialog" aria-controls="visionneuse">
+        <button type="button" class="tile__btn" data-index="11" data-cursor="Voir" aria-label="Agrandir : Pergola vitrée en façade" aria-haspopup="dialog" aria-controls="visionneuse">
           <x-photo id="m-verandas" sizes="(min-width: 1024px) 50vw, 92vw"></x-photo>
           <span class="tile__zoom" aria-hidden="true"><svg><use href="#i-loupe"></use></svg></span>
         </button>
-        <p class="tile__cap"><span class="tile__cat mono">Vérandas et verrières</span><span class="tile__txt">Couverture vitrée en façade de chalet</span><span class="valider">Lieu</span></p>
+        <p class="tile__cap"><span class="tile__cat mono">Vérandas et verrières</span><span class="tile__txt">Pergola vitrée en façade</span><span class="valider">Lieu</span></p>
       </li>
       <li class="tile t-sq" data-cat="portails">
         <button type="button" class="tile__btn" data-index="12" data-cursor="Voir" aria-label="Agrandir : Portillon à lames verticales" aria-haspopup="dialog" aria-controls="visionneuse">

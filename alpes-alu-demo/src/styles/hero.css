@@ -100,7 +100,8 @@
   z-index: 2;
   right: max(var(--margin), var(--safe-r) + 16px);
   top: calc(var(--header-h) + clamp(18px, 4vh, 56px));
-  width: min(40vw, 700px, calc((100svh - var(--header-h)) * 0.62));
+  /* --win-cap : plafond posé en JS pour ne jamais recouvrir le texte du hero */
+  width: min(40vw, 700px, calc((100svh - var(--header-h)) * 0.62), var(--win-cap, 9999px));
   aspect-ratio: 1000 / 700;
   pointer-events: none;
 }
@@ -356,22 +357,39 @@
   .hero__window {
     right: 50%;
     transform: translateX(50%);
-    width: min(78vw, 560px, calc((100svh - var(--header-h)) * 0.46));
+    width: min(78vw, 560px, calc((100svh - var(--header-h)) * 0.46), var(--win-cap, 9999px));
   }
 }
 @media (max-width: 767px) {
+  /* Sur téléphone, le texte suit le flux sous la fenêtre : aucun chevauchement, quelle que soit la hauteur */
+  .hero {
+    --win-w: min(82vw, calc((100svh - var(--header-h)) * 0.4));
+  }
   .hero__pin {
-    min-height: 620px;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: calc(var(--header-h) + 28px + var(--win-w) * 0.7 + 28px);
+    padding-bottom: calc(18px + var(--safe-b));
   }
   .hero__window {
     top: calc(var(--header-h) + 28px);
-    width: min(82vw, calc((100svh - var(--header-h)) * 0.4));
+    width: var(--win-w);
   }
   .hero__lead {
     font-size: 1.0625rem;
   }
-  .hero__content {
-    bottom: calc(70px + var(--safe-b));
+  .hero__content,
+  .hero__foot {
+    position: relative;
+    bottom: auto;
+  }
+  .hero__foot {
+    margin-top: 26px;
+    padding-top: 16px;
   }
   .hero__foot .mono:first-child {
     max-width: 22ch;
@@ -405,7 +423,8 @@
   }
 }
 
-/* Avant l'apparition (JS actif) : le texte attend l'animation, sans flash */
-.js:not(.ready) :is(.hero__title, .hero .kicker, .hero__lead, .hero__actions, .hero__foot) {
+/* Avant l'apparition (JS actif) : le texte attend l'animation, sans flash.
+   Pendant le préchargement, il reste peint sous le vantail (invisible, mais compté pour le LCP). */
+.js:not(.ready):not(.is-intro) :is(.hero__title, .hero .kicker, .hero__lead, .hero__actions, .hero__foot) {
   opacity: 0;
 }

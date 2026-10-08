@@ -131,9 +131,36 @@ function alpesHtml(): Plugin {
   };
 }
 
+/** En production : feuille de style intégrée au HTML (un aller-retour de moins), script principal chargé après le premier rendu. */
+function inlineCss(): Plugin {
+  return {
+    name: 'alpes-alu-inline-css',
+    apply: 'build',
+    enforce: 'post',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, ctx) {
+        const bundle = ctx.bundle;
+        if (!bundle) return html;
+        return html
+          .replace(/<link rel="stylesheet"[^>]*href="\.?\/?(assets\/[^"]+\.css)"[^>]*>/g, (tag, file: string) => {
+            const asset = bundle[file];
+            if (!asset || asset.type !== 'asset') return tag;
+            delete bundle[file];
+            return `<style>${String(asset.source)}</style>`;
+          })
+          // le module principal est demandé juste après le premier rendu : il ne retarde pas l'affichage
+          .replace(/<script type="module" crossorigin src="(\.?\/?assets\/[^"]+\.js)"><\/script>/, (_tag, src: string) =>
+            `<script>(function(){var go=function(){var s=document.createElement('script');s.type='module';s.src='${src}';document.head.appendChild(s)};var later=function(){requestAnimationFrame(function(){setTimeout(go,0)})};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',later);else later()})();</script>`,
+          );
+      },
+    },
+  };
+}
+
 export default defineConfig({
   base: './',
-  plugins: [alpesHtml()],
+  plugins: [alpesHtml(), inlineCss()],
   build: {
     target: 'es2020',
     cssMinify: 'lightningcss',

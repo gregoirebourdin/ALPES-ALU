@@ -21,7 +21,7 @@ export function initSmooth() {
 export const scrollVelocity = () => lenis?.velocity ?? 0;
 
 /* ---------- 01 · Préchargement ---------- */
-export function playIntro(): Promise<void> {
+export function playIntro(onOpen?: () => void): Promise<void> {
   const root = document.documentElement;
   const el = qs('div.intro');
   if (!el || !root.classList.contains('is-intro')) return Promise.resolve();
@@ -40,6 +40,8 @@ export function playIntro(): Promise<void> {
       resolve();
     };
     const tl = gsap.timeline({ onComplete: done });
+    // le hero apparaît derrière le vantail, dès qu'il commence à s'ouvrir
+    tl.call(() => onOpen?.(), [], 0.8);
     // compteur mécanique : de la création de l'atelier à l'année en cours
     const year = new Date().getFullYear();
     tl.to(paths, { strokeDashoffset: 0, duration: 0.85, ease: 'power2.out', stagger: { each: 0.01, from: 'start' } }, 0)
@@ -66,21 +68,23 @@ export function initHeader() {
         onToggle: (st) => st.isActive && (header.dataset.theme = section.dataset.theme || 'light'),
       });
     });
-  // fond flouté et masquage au scroll vers le bas, une fois le hero passé
+  // fond flouté et masquage au scroll vers le bas : sur ordinateur une fois le hero épinglé passé,
+  // sur mobile dès que le contenu passe sous la barre
   let solid = false;
+  const limit = () => (window.innerWidth >= 1024 && hero ? Math.max(0, hero.offsetHeight - window.innerHeight) + 60 : 40);
   ScrollTrigger.create({
     start: 0,
     end: 'max',
     onUpdate: (st) => {
       const y = st.scroll();
-      const limit = hero ? hero.offsetHeight * 0.6 : 200;
-      const pastHero = y > limit;
-      if (pastHero !== solid) {
-        solid = pastHero;
+      const l = limit();
+      const past = y > l;
+      if (past !== solid) {
+        solid = past;
         header.classList.toggle('is-solid', solid);
       }
       const menuOpen = document.querySelector('.menu.is-open');
-      header.classList.toggle('is-hidden', pastHero && st.direction === 1 && y > limit + 120 && !menuOpen);
+      header.classList.toggle('is-hidden', past && st.direction === 1 && y > l + 80 && !menuOpen);
     },
   });
   header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
@@ -93,9 +97,10 @@ export function initMenu() {
   if (!burger || !menu) return;
   const label = burger.querySelector('.sr')!;
   qsa('.menu__list li', menu).forEach((li, i) => li.style.setProperty('--i', String(i)));
-  const outside = [qs('main'), qs('.footer'), qs('.sav-band'), qs('.bar__logo'), qs('.nav')].filter(Boolean) as HTMLElement[];
+  const outside = [qs('.skip'), qs('main'), qs('.footer'), qs('.sav-band'), qs('.bar__logo'), qs('.nav'), qs('.bar .btn')].filter(Boolean) as HTMLElement[];
   let open = false;
-  const focusables = () => [burger, ...qsa<HTMLElement>('button, [href], [tabindex]:not([tabindex="-1"])', menu)];
+  // éléments réellement focalisables (les <use href> des pictos SVG n'en font pas partie)
+  const focusables = () => [burger, ...qsa<HTMLElement>('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])', menu)];
   const onKey = (e: KeyboardEvent) => {
     if (e.key === 'Escape') {
       e.preventDefault();
@@ -256,18 +261,19 @@ export function initKickers() {
     const text = el.textContent || '';
     const m = /^(\d\d)(.*)$/.exec(text);
     if (!m || reduceMotion) return;
-    el.setAttribute('aria-label', text);
     const digits = m[1].split('');
     el.innerHTML =
+      `<span class="sr-only">${text}</span>` +
       digits
         .map((d) => `<span class="odo" aria-hidden="true"><span class="odo__col">${Array.from({ length: Number(d) + 1 }, (_, k) => `<span>${k}</span>`).join('')}</span></span>`)
-        .join('') + `<span aria-hidden="true">${m[2]}</span>`;
+        .join('') +
+      `<span aria-hidden="true">${m[2]}</span>`;
     const cols = qsa('.odo__col', el);
     cols.forEach((c) => gsap.set(c, { yPercent: 0 }));
     let done = false;
     ScrollTrigger.create({
       trigger: el,
-      start: 'top 92%',
+      start: 'top 99%',
       onEnter: () => {
         if (done) return;
         done = true;

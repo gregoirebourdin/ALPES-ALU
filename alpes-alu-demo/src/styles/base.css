@@ -161,15 +161,32 @@ ol {
 }
 .kicker__num {
   display: inline-block;
+  flex: none;
+  white-space: nowrap;
   color: var(--kn, var(--graphite));
   overflow: hidden;
+}
+.kicker > span:last-child {
+  min-width: 0;
 }
 .kicker__num .digit {
   display: inline-block;
 }
 /* Compteur mécanique : chaque chiffre est une colonne qui défile */
-.kicker__num:has(.odo) {
+/* même hauteur de ligne avant et après la pose du compteur : aucun décalage */
+.kicker__num {
   line-height: 1.3em;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 .odo {
   display: inline-block;
@@ -240,6 +257,16 @@ p {
   background: var(--graphite);
   color: var(--alu);
 }
+/* Sur fond sombre, le gris des petits textes est éclairci pour garder un contraste AA (≥ 4,5:1) */
+.section--dark,
+.section--urgent,
+.hero,
+.footer,
+.rallye,
+.menu,
+.lightbox {
+  --gris: #8d949b;
+}
 .section--dark .h2,
 .section--dark .h3 {
   color: var(--neige);
@@ -287,6 +314,7 @@ p {
   color: var(--lead, var(--gris-fonce));
 }
 .section--dark .section__lead,
+.section--urgent .section__lead,
 .hero .section__lead {
   --lead: var(--alu);
 }
@@ -324,7 +352,7 @@ p {
   line-height: 1.3;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #8a6d00;
+  color: #6b5500;
   background: rgba(244, 210, 13, 0.14);
   vertical-align: middle;
   white-space: normal;
@@ -533,7 +561,7 @@ p {
 /* Grain : bruit feTurbulence, 4 % */
 .grain {
   position: fixed;
-  inset: -40%;
+  inset: -6%;
   z-index: 9000;
   pointer-events: none;
   opacity: 0.045;

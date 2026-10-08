@@ -31,6 +31,23 @@ export function initHero() {
     scene?.setZoom(z);
   };
 
+  /* --- la fenêtre ne recouvre jamais le texte : plafond calculé sur l'espace libre au-dessus --- */
+  const content = qs('.hero__content', hero);
+  const fitWindow = () => {
+    win.style.removeProperty('--win-cap');
+    if (window.innerWidth < 768 || !content) return;
+    const wr = win.getBoundingClientRect();
+    let limit = Infinity;
+    for (const c of Array.from(content.children) as HTMLElement[]) {
+      const cr = c.getBoundingClientRect();
+      if (cr.width && cr.right > wr.left && cr.left < wr.right) limit = Math.min(limit, cr.top - 28);
+    }
+    const maxH = limit - wr.top;
+    if (maxH < wr.height) win.style.setProperty('--win-cap', `${Math.max(160, maxH / 0.7).toFixed(0)}px`);
+  };
+  fitWindow();
+  window.addEventListener('resize', fitWindow);
+
   /* --- repli SVG et mouvement réduit --- */
   if (reduceMotion) {
     gsap.set(sashR, { x: -210 });
@@ -44,13 +61,22 @@ export function initHero() {
   gsap.set(win, { opacity: 0, y: 30 });
 
   /* --- apparition après le préchargement --- */
-  let split: SplitText | null = null;
+  let revealed = false;
+  let onRevealed = () => {};
   const reveal = () => {
     document.documentElement.classList.add('ready');
-    split = SplitText.create(title, { type: 'lines', mask: 'lines', linesClass: 'hl' });
+    revealed = true;
+    onRevealed();
+    // autoSplit : si la police arrive après le découpage, les lignes sont refaites et l'animation reprend où elle en était
+    SplitText.create(title, {
+      type: 'lines',
+      mask: 'lines',
+      linesClass: 'hl',
+      autoSplit: true,
+      onSplit: (self) => gsap.from(self.lines, { yPercent: 112, duration: 1.15, stagger: 0.08, ease: 'expo.out' }),
+    });
     const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-    tl.from(split.lines, { yPercent: 112, duration: 1.15, stagger: 0.08 }, 0)
-      .from('.hero .kicker', { opacity: 0, y: 14, duration: 0.8 }, 0.1)
+    tl.from('.hero .kicker', { opacity: 0, y: 14, duration: 0.8 }, 0.1)
       .from('.hero__lead', { opacity: 0, y: 24, duration: 0.9, ease: 'power4.out' }, 0.35)
       .from('.hero__actions > *', { opacity: 0, y: 24, duration: 0.9, ease: 'power4.out', stagger: 0.06 }, 0.42)
       .from('.hero__foot', { opacity: 0, duration: 0.8 }, 0.5)
@@ -125,10 +151,17 @@ export function initHero() {
     });
   }
 
-  /* --- WebGL, chargé après le premier affichage --- */
-  const canGL = webglAvailable() && !isModestDevice();
-  if (canGL) {
-    const start = () =>
+  /* --- WebGL : jamais pendant le démarrage. Chargé à la première interaction après l'apparition
+         du hero (ou au bout de quelques secondes) ; d'ici là, la fenêtre SVG tient la place. --- */
+  if (!isModestDevice()) {
+    let started = false;
+    let wanted = false;
+    const evs = ['pointermove', 'pointerdown', 'wheel', 'touchstart', 'keydown', 'scroll'];
+    const load = () => {
+      if (started) return;
+      started = true;
+      evs.forEach((e) => window.removeEventListener(e, ask));
+      if (!webglAvailable()) return;
       import('./hero3d')
         .then(({ createHeroScene }) => createHeroScene(hero, qs<HTMLCanvasElement>('.hero__canvas', hero)!, win))
         .then((s) => {
@@ -143,9 +176,16 @@ export function initHero() {
           ScrollTrigger.addEventListener('refresh', () => scene?.resize());
         })
         .catch(() => hero.classList.remove('gl-on'));
-    const idle = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => void }).requestIdleCallback;
-    if (document.readyState === 'complete') idle ? idle(start, { timeout: 900 }) : setTimeout(start, 200);
-    else window.addEventListener('load', () => (idle ? idle(start, { timeout: 900 }) : setTimeout(start, 200)), { once: true });
+    };
+    function ask() {
+      wanted = true;
+      if (revealed) load();
+    }
+    evs.forEach((e) => window.addEventListener(e, ask, { passive: true }));
+    onRevealed = () => {
+      if (wanted) setTimeout(load, 700);
+      else setTimeout(load, 8000);
+    };
   }
 
   return { reveal };

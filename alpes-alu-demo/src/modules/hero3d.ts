@@ -258,7 +258,8 @@ void main() {
   float sky = smoothstep(0.3, 1.0, q.y) * uSky;
   vec3 col = mix(refr, env, clamp(F * uFres + uRefl + sky, 0.0, 1.0));
   // reflet qui glisse lentement sur le vitrage
-  float d = (q.x * 0.75 + q.y * 0.55) - fract(uTime * 0.035 + uPointer.x * 0.06) * 2.6 + 0.6;
+  // uTime porte la phase du reflet (scroll et souris) : rien ne bouge, rien ne se redessine
+  float d = (q.x * 0.75 + q.y * 0.55) - fract(uTime) * 2.6 + 0.6;
   float band = smoothstep(0.0, 0.015, d) * (1.0 - smoothstep(0.16, 0.18, d));
   float band2 = smoothstep(0.24, 0.25, d) * (1.0 - smoothstep(0.29, 0.30, d));
   col += vec3(0.96, 0.98, 1.0) * (band * uBand + band2 * uBand * 0.6);
@@ -435,9 +436,11 @@ export async function createHeroScene(hero: HTMLElement, canvas: HTMLCanvasEleme
   const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
   const range = (t: number, a: number, b: number) => Math.min(1, Math.max(0, (t - a) / (b - a)));
 
-  const frame = (t: number) => {
+  // rendu à la demande : seulement si la progression, la souris ou la taille ont changé
+  const frame = () => {
     raf = requestAnimationFrame(frame);
-    if (!visible) return;
+    const moving = Math.abs(tx - cx) > 1e-4 || Math.abs(ty - cy) > 1e-4;
+    if (!visible || (!dirty && !moving)) return;
     cx += (tx - cx) * 0.06;
     cy += (ty - cy) * 0.06;
     const slide = easeInOut(range(progress, 0.02, 0.42));
@@ -454,7 +457,7 @@ export async function createHeroScene(hero: HTMLElement, canvas: HTMLCanvasEleme
     handleProg.uniforms.uOpacity.value = op;
     rubberProg.uniforms.uOpacity.value = op;
     glassUniforms.uOpacity.value = op;
-    glassUniforms.uTime.value = t * 0.001;
+    glassUniforms.uTime.value = 0.32 + progress * 0.9 + cx * 0.08;
     glassUniforms.uPointer.value = [cx, cy];
     if (op <= 0.001) {
       if (dirty) {
