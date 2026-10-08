@@ -355,6 +355,66 @@
   background: var(--jaune);
   transform: translateX(calc(var(--p, 0.11) * (var(--bar-w, 600px) - 4px))) skewX(-12deg);
 }
+/* Défilement horizontal épinglé (ordinateur) : la section fait exactement un écran et chaque carte y tient
+   en entier ; la photo prend la hauteur qui reste une fois le texte placé. */
+@media (min-width: 1024px) {
+  html.js:not(.reduce) .metiers__pin {
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    justify-content: flex-start;
+    gap: clamp(14px, 2.6vh, 36px);
+    padding-block: calc(var(--bar-h) + clamp(12px, 2.4vh, 36px)) clamp(16px, 3vh, 40px);
+  }
+  html.js:not(.reduce) .metiers__head .h2 {
+    font-size: min(var(--fs-h2), 7.4vh);
+  }
+  html.js:not(.reduce) .metiers__head .section__lead {
+    font-size: min(var(--fs-lead), max(1rem, 2.3vh));
+  }
+  html.js:not(.reduce) .metiers__viewport {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  html.js:not(.reduce) .metiers__track {
+    height: 100%;
+  }
+  html.js:not(.reduce) .metier {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  html.js:not(.reduce) .metier__media {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 88px;
+  }
+  html.js:not(.reduce) .metier__media .photo {
+    position: absolute;
+    inset: 0;
+    height: auto;
+    aspect-ratio: auto;
+  }
+  html.js:not(.reduce) .metier__body {
+    flex: none;
+    row-gap: clamp(6px, 1.1vh, 12px);
+    padding: clamp(14px, 2.2vh, 30px) clamp(18px, 1.6vw, 30px);
+  }
+  html.js:not(.reduce) .metier__title {
+    font-size: clamp(1.2rem, 3.2vh, 2.05rem);
+  }
+  html.js:not(.reduce) .metier__text {
+    font-size: clamp(0.875rem, 1.9vh, 1rem);
+  }
+  html.js:not(.reduce) .metier__icon {
+    width: clamp(40px, 5.6vh, 64px);
+    height: clamp(40px, 5.6vh, 64px);
+  }
+  html.js:not(.reduce) .metier__specs {
+    gap: clamp(4px, 0.8vh, 8px);
+    padding-top: clamp(8px, 1.4vh, 14px);
+  }
+}
 /* Sans JS ou en mouvement réduit, pas de défilement horizontal : les neuf cartes en grille */
 @media (min-width: 1024px) {
   :is(html:not(.js), html.reduce) .metiers__track {

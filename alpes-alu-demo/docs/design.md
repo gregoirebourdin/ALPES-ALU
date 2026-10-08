@@ -202,4 +202,7 @@ parallaxe divisée par trois, carrousels tactiles.
 - **Titre des métiers** : « Du châssis au portail, un seul atelier. » plutôt qu'un nombre de métiers.
 - **Performances** : démarrage découpé en tâches courtes, titres découpés en lignes à l'approche, CSS intégrée
   au HTML, script principal demandé après le premier rendu, polices de repli aux métriques des vraies.
+- **Volets roulants de transition** : retirés après relecture, ils masquaient trop le contenu au scroll.
+- **Métiers (défilement horizontal)** : la section épinglée fait exactement un écran ; la photo de chaque carte
+  prend la hauteur restante pour que titre, texte et caractéristiques restent toujours lisibles.
 

@@ -1,7 +1,6 @@
 import { ScrollTrigger } from './lib/gsap';
 import { initSmooth, playIntro, initHeader, initMenu, initMagnetic, initCursor, initTape, initKickers, initReveals } from './modules/core';
 import { initHero } from './modules/hero';
-import { initShutters } from './modules/shutter';
 import {
   initTitles,
   initManifesto,
@@ -73,7 +72,6 @@ export async function boot() {
     ['initReperes', initReperes],
     ['initMarquee', initMarquee],
     ['initAssembly', initAssembly],
-    ['initShutters', initShutters],
     ['initAtelier', initAtelier],
     ['initAnatomy', initAnatomy],
     ['initVolets', initVolets],

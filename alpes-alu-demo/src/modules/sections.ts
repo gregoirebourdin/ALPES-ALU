@@ -643,8 +643,8 @@ export function initCta() {
       .set(band, { visibility: 'hidden' }, 1.58)
       .to(label, { opacity: 1, yPercent: 0, duration: 0.8, ease: 'expo.out', stagger: 0.08 }, 1.38);
   };
-  // après la remontée du volet de transition, qui couvre l'écran jusque-là
-  ScrollTrigger.create({ trigger: s, start: 'top 6%', onEnter: play });
+  // quand le bloc titre + bouton est bien dans l'écran
+  ScrollTrigger.create({ trigger: qs('.appel__lockup', s) || s, start: 'top 62%', onEnter: play });
   window.addEventListener('resize', () => {
     if (!played) return;
     gsap.set(shape, { opacity: 1 });

@@ -1,4 +1,4 @@
-// Captures de contrôle : page complète à chaque largeur cible, puis les cinq moments clés en mouvement.
+// Captures de contrôle : page complète à chaque largeur cible, puis les moments forts en mouvement.
 // Usage : npm run build && npm run preview (dans un autre terminal), puis npm run screens
 // Options : URL=http://localhost:4173/ WIDTHS=360,1440 node scripts/screens.mjs
 //
@@ -56,7 +56,7 @@ async function fullPage(browser, w, h, name) {
   await ctx.close();
 }
 
-// Les cinq moments, en mouvement : fenêtre du hero, vue éclatée, volet roulant, mur de l'atelier, cornière → bouton.
+// Les moments forts, en mouvement : fenêtre du hero, vue éclatée, mur de l'atelier, cornière → bouton.
 async function moments(browser, w, h, tag) {
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, isMobile: w < 768, hasTouch: w < 1024 });
   const page = await ctx.newPage();
@@ -77,12 +77,11 @@ async function moments(browser, w, h, tag) {
   await shot('1-fenetre-repos', 0, 600);
   await shot('1-fenetre-ouverte', h * (w >= 1024 ? 0.5 : 0.25));
   await shot('2-vue-eclatee', await at('.assemblage', 0.45));
-  await shot('3-volet-roulant', (await at('.atelier')) - h * 0.55, 900);
-  await shot('4-mur-atelier', await at('.atelier .wall', w >= 1024 ? 0.1 : 0.05));
+  await shot('3-mur-atelier', await at('.atelier .wall', w >= 1024 ? 0.1 : 0.05));
   const cta = await at('.appel');
   await page.evaluate(([y, off]) => window.scrollTo(0, y - off), [cta, h * 0.2]);
   await page.waitForTimeout(700);
-  await shot('5-corniere-bouton', cta, 2800);
+  await shot('4-corniere-bouton', cta, 2800);
   console.log(`moments ${tag} ok`);
   await ctx.close();
 }

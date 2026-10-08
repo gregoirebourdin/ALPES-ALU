@@ -35,7 +35,7 @@ fonctionne sans étape préalable.
 | `node scripts/gen-svg.mjs` | Génère la crête relevée du hero, les courbes de niveau de la carte et la vue éclatée |
 | `node scripts/build-logo-symbols.mjs` | Produit les symboles SVG du logo redessiné (`scripts/logo/` contient l’ajustement sur le PNG d’origine) |
 | `npm run svg` | Passe SVGO sur les logos et le favicon |
-| `npm run screens` | Captures pleine page aux largeurs 360, 390, 430, 768, 1024, 1280, 1440, 1920, 2560 et téléphone paysage, puis les cinq moments clés (serveur `npm run preview` lancé) |
+| `npm run screens` | Captures pleine page aux largeurs 360, 390, 430, 768, 1024, 1280, 1440, 1920, 2560 et téléphone paysage, puis les moments clés (serveur `npm run preview` lancé) |
 | `npm run videos` | Vidéos WebM du défilement complet, ordinateur et téléphone (serveur `npm run preview` lancé) |
 
 Seuls les originaux réellement utilisés sont versionnés dans `assets/raw/uploads/` ; `npm run fetch:source`
@@ -48,7 +48,7 @@ index.html              tête (méta, Open Graph, JSON-LD, polices), assemble le
 partials/               les 16 sections en HTML (+ sprite SVG, symboles du logo, SVG générés)
 src/styles/             jetons, base, en-tête, préchargement, hero, sections, calques
 src/modules/            core (Lenis, préchargement, en-tête, menu, curseur, réglette), hero (+ hero3d WebGL),
-                        shutter (volet roulant), sections (une fonction par section)
+                        sections (une fonction par section)
 src/generated/          photos.json (dimensions, largeurs, LQIP) produit par le pipeline d’images
 scripts/                aspiration, verdicts, images, polices, SVG, logo, captures, vidéos
 assets/raw/             pages et médias aspirés, manifest.json
@@ -59,7 +59,7 @@ docs/                   design.md, captures, vidéos
 Pile : Vite 8 + TypeScript (aucun framework d’interface), GSAP 3 (ScrollTrigger, SplitText, Flip), Lenis,
 OGL pour la seule fenêtre 3D du hero (chargée à part, 20 Ko compressés).
 
-## Les cinq moments
+## Les moments forts
 
 1. **La fenêtre du hero** : coulissant aluminium modélisé en code (profilés balayés, onglets à 45°), alu anodisé
    brossé dont les reflets viennent du vrai ciel de la photo, vitrage qui laisse voir la vue. La photo est voilée
@@ -68,13 +68,14 @@ OGL pour la seule fenêtre 3D du hero (chargée à part, 20 Ko compressés).
    sur appareil modeste ou en mouvement réduit ; la scène 3D se charge à la première interaction.
 2. **La vue éclatée** : dormant, joints, ouvrant, vitrage, crémone et poignée se rassemblent en cinq étapes,
    cotes tracées, de la prise de mesures à la pose.
-3. **Le volet roulant** : entre les grandes sections, un volet descend lame par lame (la lumière passe entre les
-   lames), se ferme puis remonte sur la section suivante. Lié au scroll, réversible, jamais bloquant.
-4. **Le mur de l’atelier** : vraies photos de l’équipe et de l’atelier encadrées comme des vitrages, reflet qui
+3. **Le mur de l’atelier** : vraies photos de l’équipe et de l’atelier encadrées comme des vitrages, reflet qui
    glisse au survol.
-5. **La cornière devient le bouton** : à l’appel final, la bande du logo traverse l’écran, montant en tête, puis
+4. **La cornière devient le bouton** : à l’appel final, la bande du logo traverse l’écran, montant en tête, puis
    se rétracte jusqu’à n’être plus que le bouton « Demander un devis » ; le titre au-dessus reprend la place du mot
    « Alpes Alu » du logo.
+
+Les transitions en volet roulant entre les sections ont été retirées après relecture : elles masquaient trop
+le contenu pendant le défilement.
 
 ## Faits affichés et leurs sources (site actuel alpesalu.fr)
 
