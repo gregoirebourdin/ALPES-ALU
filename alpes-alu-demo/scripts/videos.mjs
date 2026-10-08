@@ -28,14 +28,18 @@ async function record(name, { width, height, mobile }) {
   await page.mouse.move(width * 0.66, height * 0.38, { steps: 12 });
   await page.waitForTimeout(1600);
   const total = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight);
-  // défilement régulier : la molette sur ordinateur (lissée par Lenis), le défilement natif sur téléphone
-  const step = mobile ? 26 : 50;
+  // défilement à vitesse constante en temps réel (la vidéo garde le même rythme, même si le rendu est lent) :
+  // la molette sur ordinateur (lissée par Lenis), le défilement natif sur téléphone
+  const speed = mobile ? 900 : 1100; // px par seconde
+  const t0 = Date.now();
   let y = 0;
   while (y < total) {
-    if (mobile) await page.evaluate((d) => window.scrollBy(0, d), step);
-    else await page.mouse.wheel(0, step);
-    y += step;
-    await page.waitForTimeout(mobile ? 22 : 34);
+    const target = Math.min(total, ((Date.now() - t0) / 1000) * speed);
+    const d = Math.max(1, Math.round(target - y));
+    if (mobile) await page.evaluate((d) => window.scrollBy(0, d), d);
+    else await page.mouse.wheel(0, d);
+    y += d;
+    await page.waitForTimeout(16);
   }
   await page.waitForTimeout(2000);
   const video = page.video();
@@ -48,5 +52,6 @@ async function record(name, { width, height, mobile }) {
 }
 
 await mkdir(OUT, { recursive: true });
-await record('ordinateur', { width: 1280, height: 800, mobile: false });
-await record('mobile', { width: 390, height: 844, mobile: true });
+// ONLY=ordinateur ou ONLY=mobile pour n'en refaire qu'une
+if (process.env.ONLY !== 'mobile') await record('ordinateur', { width: 1280, height: 800, mobile: false });
+if (process.env.ONLY !== 'ordinateur') await record('mobile', { width: 390, height: 844, mobile: true });
