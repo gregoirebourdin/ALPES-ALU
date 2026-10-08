@@ -89,8 +89,9 @@ async function moments(browser, w, h, tag) {
 
 await mkdir(OUT, { recursive: true });
 const browser = await chromium.launch({ args: GL });
-for (const [w, h, name] of SIZES) await fullPage(browser, w, h, name);
-if (!process.env.WIDTHS) {
+// ONLY=moments : seulement les moments ; ONLY=pages : seulement les pages complètes
+if (process.env.ONLY !== 'moments') for (const [w, h, name] of SIZES) await fullPage(browser, w, h, name);
+if (!process.env.WIDTHS && process.env.ONLY !== 'pages') {
   await moments(browser, 1440, 900, 'ordinateur');
   await moments(browser, 390, 844, 'mobile');
 }

@@ -27,7 +27,7 @@ jamais par un superlatif.
 |---|---|---|
 | **A · La fenêtre sur le chantier** | Fenêtre aluminium en 3D devant la vraie photo de la vitre levée à la grue au-dessus des toits. Au scroll, l'ouvrant coulisse et la fenêtre s'efface. | **Retenue.** Le 3D porte le « waouh » des premières secondes, la photo apporte la preuve : on fabrique et on vient poser, même à la grue. Personne d'autre ne peut montrer cette image. |
 | B · La coupe technique | Fond neige, grande coupe de profilé cotée, titre massif à gauche. | Très juste pour l'univers, mais froide et sans preuve humaine. Reprise dans les sections 06 et 08. |
-| C · Le panorama cadré | Bandeau panoramique du châssis composé face aux sommets, encadré de cornières. | Belle image, mais l'intérieur photographié (téléviseur, canapé) oblige à un recadrage très large. Reprise comme environnement de reflets du verre 3D. |
+| C · Le panorama cadré | Bandeau panoramique du châssis composé face aux sommets, encadré de cornières. | Belle image, mais l'intérieur photographié (téléviseur, canapé) oblige à un recadrage très large. Écartée ; les reflets de l'alu 3D viennent finalement du ciel et des crêtes de la photo du hero, plus contrastés. |
 
 ### Les cinq moments à réussir
 
@@ -128,7 +128,7 @@ trois au maximum.
    portent la différence (ici, l'atelier), la durée (1988) et le métier. « Ici »
    se lit littéralement sur la photo : la vitre est posée dans la vallée.
 2. « La montagne mérite un beau cadre. » — gardée pour la section anatomie.
-3. « Conçu, fabriqué et posé par la même famille. » — gardée pour l'atelier.
+3. « Conçu, fabriqué et posé par une entreprise familiale. » — gardée pour l'atelier.
 
 ## 6. Spécification des animations
 
@@ -187,3 +187,19 @@ parallaxe divisée par trois, carrousels tactiles.
   virent au jaune.
 - AVIF et WebP en 640, 1 280, 1 920 et 2 560 px, LQIP flouté en ligne,
   recadrages différents sur téléphone pour le hero.
+
+## 9. Notes de réalisation (écarts avec le plan initial)
+
+- **Hero** : la photo est voilée autour de la fenêtre et le vitrage montre la vue non voilée ; quand le vantail
+  coulisse, un plan « air » laisse passer la lumière, puis le voile se lève et la fenêtre s'efface. La carte
+  d'environnement des reflets est un demi-panorama tiré du ciel de la photo du hero, mis en miroir. La scène
+  WebGL se charge à la première interaction après l'apparition du hero (ou au bout de 8 s) et ne se redessine
+  que si la progression, la souris ou la taille changent ; d'ici là, la fenêtre SVG tient la place.
+- **Appel final** : sur l'aplat jaune, la cornière est graphite (un jaune sur jaune serait invisible). Elle
+  traverse l'écran montant en tête, se rétracte jusqu'à la taille du bouton et lui passe le relais ; le titre
+  au-dessus occupe la place du mot « Alpes Alu » dans le logo, le montant se dresse à droite de « projet. ».
+- **Vue éclatée** : dessin recadré et colonne élargie pour que la fenêtre occupe la moitié de l'écran.
+- **Titre des métiers** : « Du châssis au portail, un seul atelier. » plutôt qu'un nombre de métiers.
+- **Performances** : démarrage découpé en tâches courtes, titres découpés en lignes à l'approche, CSS intégrée
+  au HTML, script principal demandé après le premier rendu, polices de repli aux métriques des vraies.
+
