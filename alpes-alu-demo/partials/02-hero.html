@@ -1,0 +1,102 @@
+<section class="hero" id="accueil" aria-labelledby="hero-title" data-section="02" data-label="Accueil" data-theme="dark">
+  <div class="hero__pin">
+    <div class="hero__media">
+      <x-photo id="hero" sizes="100vw" class="hero__photo" img-class="hero__img" loading="eager" fetchpriority="high"></x-photo>
+      <div class="hero__shade"></div>
+      <div class="hero__dim"></div>
+      <include src="partials/generated/ridges.svg"></include>
+    </div>
+
+    <canvas class="hero__canvas" aria-hidden="true"></canvas>
+
+    <div class="hero__window" aria-hidden="true">
+      <span class="hero__shadow"></span>
+      <svg class="hero__svgwin" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="hw-alu" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e9ecee"/>
+            <stop offset=".18" stop-color="#b8bdc2"/>
+            <stop offset=".36" stop-color="#dfe2e5"/>
+            <stop offset=".52" stop-color="#9ea4aa"/>
+            <stop offset=".7" stop-color="#d4d8db"/>
+            <stop offset="1" stop-color="#8d939a"/>
+          </linearGradient>
+          <linearGradient id="hw-alu-v" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#a3a9ae"/>
+            <stop offset=".3" stop-color="#e6e9eb"/>
+            <stop offset=".55" stop-color="#b3b8bd"/>
+            <stop offset="1" stop-color="#d9dcdf"/>
+          </linearGradient>
+          <linearGradient id="hw-glass" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#b9ced6" stop-opacity=".22"/>
+            <stop offset=".45" stop-color="#b9ced6" stop-opacity=".06"/>
+            <stop offset="1" stop-color="#121417" stop-opacity=".18"/>
+          </linearGradient>
+          <linearGradient id="hw-sheen" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+            <stop offset=".5" stop-color="#fff" stop-opacity=".38"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <pattern id="hw-brush" width="6" height="6" patternUnits="userSpaceOnUse">
+            <path d="M0 1.5h6M0 4.2h6" stroke="#fff" stroke-opacity=".16" stroke-width=".6"/>
+          </pattern>
+          <clipPath id="hw-clip-l"><rect x="84" y="84" width="398" height="532"/></clipPath>
+          <clipPath id="hw-clip-r"><rect x="518" y="84" width="398" height="532"/></clipPath>
+        </defs>
+        <!-- Dormant -->
+        <path class="hw-frame" d="M0 0h1000v700H0Zm46 46v608h908V46Z" fill="url(#hw-alu)" fill-rule="evenodd"/>
+        <path d="M0 0h1000v700H0Zm46 46v608h908V46Z" fill="url(#hw-brush)" fill-rule="evenodd"/>
+        <path d="M46 46h908v608H46Z" fill="none" stroke="#121417" stroke-opacity=".45" stroke-width="2"/>
+        <path d="M2 2h996v696H2Z" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+        <!-- Ouvrant gauche (fixe dans le rail arrière) -->
+        <g class="hw-sash hw-sash--l">
+          <rect x="84" y="84" width="398" height="532" fill="url(#hw-glass)"/>
+          <g clip-path="url(#hw-clip-l)"><rect class="hw-sheen" x="-120" y="40" width="120" height="640" fill="url(#hw-sheen)" transform="skewX(-18)"/></g>
+          <path d="M46 46h474v608H46Zm38 38v532h398V84Z" fill="url(#hw-alu-v)" fill-rule="evenodd"/>
+          <path d="M84 84h398v532H84Z" fill="none" stroke="#121417" stroke-opacity=".5" stroke-width="2.5"/>
+          <path d="M84 84h398v532H84Z" fill="none" stroke="#202327" stroke-width="5" stroke-opacity=".55" transform="translate(0 0)"/>
+        </g>
+        <!-- Ouvrant droit (rail avant, coulisse vers la gauche) -->
+        <g class="hw-sash hw-sash--r">
+          <rect x="518" y="84" width="398" height="532" fill="url(#hw-glass)"/>
+          <g clip-path="url(#hw-clip-r)"><rect class="hw-sheen" x="380" y="40" width="140" height="640" fill="url(#hw-sheen)" transform="skewX(-18)"/></g>
+          <path d="M480 46h474v608H480Zm38 38v532h398V84Z" fill="url(#hw-alu-v)" fill-rule="evenodd"/>
+          <path d="M480 46h474v608H480Zm38 38v532h398V84Z" fill="url(#hw-brush)" fill-rule="evenodd"/>
+          <path d="M518 84h398v532H518Z" fill="none" stroke="#121417" stroke-opacity=".5" stroke-width="2.5"/>
+          <path d="M480 46v608" stroke="#121417" stroke-opacity=".55" stroke-width="3"/>
+          <rect x="490" y="318" width="16" height="64" rx="3" fill="#2a2e33"/>
+          <rect x="494" y="326" width="8" height="48" rx="2" fill="#c9cdd1"/>
+        </g>
+      </svg>
+      <div class="hero__cotes">
+        <span class="cote cote--h"><span class="cote__line"></span><span class="cote__txt mono">L · sur mesure</span></span>
+        <span class="cote cote--v"><span class="cote__line"></span><span class="cote__txt mono">H · sur mesure</span></span>
+        <span class="cote cote--tag mono">Coulissant 2 vantaux · aluminium</span>
+        <svg class="cote__corner" viewBox="0 0 24 24"><use href="#corniere-angle"></use></svg>
+      </div>
+    </div>
+
+    <div class="hero__content wrap">
+      <p class="kicker"><span class="kicker__num">02 / 16</span><span>Menuiserie aluminium, acier et inox</span></p>
+      <h1 id="hero-title" class="hero__title" data-split="lines">Vos fenêtres, fabriquées ici depuis 1988.</h1>
+      <p class="hero__lead">Nous concevons vos menuiseries sur mesure, nous les fabriquons dans notre atelier des Sablonnières, et nous venons les poser chez vous.</p>
+      <div class="hero__actions">
+        <button type="button" class="btn btn--jaune" data-magnetic>
+          <span class="btn__fill" aria-hidden="true"></span>
+          <span class="btn__label">Demander un devis</span>
+          <span class="btn__ico" aria-hidden="true"><svg><use href="#i-fleche"></use></svg><svg><use href="#i-fleche"></use></svg></span>
+        </button>
+        <button type="button" class="btn btn--ghost" data-magnetic>
+          <span class="btn__fill" aria-hidden="true"></span>
+          <span class="btn__label">Voir nos réalisations</span>
+          <span class="btn__ico" aria-hidden="true"><svg><use href="#i-fleche-bas"></use></svg><svg><use href="#i-fleche-bas"></use></svg></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="hero__foot wrap">
+      <p class="mono">L’Argentière-la-Bessée · Hautes-Alpes · depuis 1988</p>
+      <p class="hero__scroll mono"><span>Faire défiler</span><span class="hero__scroll-line" aria-hidden="true"></span></p>
+    </div>
+  </div>
+</section>

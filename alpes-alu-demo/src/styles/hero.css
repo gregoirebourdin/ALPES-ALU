@@ -1,0 +1,411 @@
+/* 02 · Hero : vraie photo, relevé des crêtes, fenêtre 3D (ou SVG), titre en lignes masquées */
+.hero {
+  position: relative;
+  background: var(--graphite);
+  color: var(--neige);
+}
+/* La hauteur d'écran est portée par le bloc épinglé : la section grandit avec l'épinglage */
+.hero__pin {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  height: 100%;
+  background: var(--graphite);
+}
+.hero__img {
+  transform: scale(var(--hero-zoom, 1.08));
+  transform-origin: 50% 42%;
+}
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(18, 20, 23, 0.78) 0%, rgba(18, 20, 23, 0.18) 24%, rgba(18, 20, 23, 0) 42%),
+    linear-gradient(0deg, rgba(18, 20, 23, 0.94) 0%, rgba(18, 20, 23, 0.72) 24%, rgba(18, 20, 23, 0.18) 52%, rgba(18, 20, 23, 0) 66%),
+    linear-gradient(90deg, rgba(18, 20, 23, 0.42) 0%, rgba(18, 20, 23, 0) 48%);
+}
+/* Voile : la vue n'est lumineuse qu'à travers le vitrage, puis la lumière revient à l'ouverture */
+.hero__dim {
+  position: absolute;
+  inset: 0;
+  display: none;
+  background: rgba(18, 20, 23, 0.46);
+  opacity: var(--dim, 0);
+  pointer-events: none;
+}
+.js:not(.reduce) .hero__dim {
+  display: block;
+}
+.hero__ridges {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  transform: scale(var(--hero-zoom, 1.08));
+  transform-origin: 50% 42%;
+}
+.hero__ridges--mob {
+  display: none;
+}
+@media (max-width: 767px) and (orientation: portrait) {
+  .hero__ridges--desk {
+    display: none;
+  }
+  .hero__ridges--mob {
+    display: block;
+  }
+}
+.ridge {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ridge--main {
+  stroke: rgba(244, 245, 242, 0.92);
+  stroke-width: 1.4;
+  stroke-dasharray: 1;
+  stroke-dashoffset: var(--ridge, 0);
+}
+.ridge--echo {
+  stroke: var(--jaune);
+  stroke-width: 1.25;
+  stroke-dasharray: 0.004 0.006;
+  opacity: 0.85;
+}
+.ridge--marks {
+  fill: none;
+  stroke: var(--jaune);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+}
+
+/* La fenêtre */
+.hero__window {
+  position: absolute;
+  z-index: 2;
+  right: max(var(--margin), var(--safe-r) + 16px);
+  top: calc(var(--header-h) + clamp(18px, 4vh, 56px));
+  width: min(40vw, 700px, calc((100svh - var(--header-h)) * 0.62));
+  aspect-ratio: 1000 / 700;
+  pointer-events: none;
+}
+.hero__svgwin {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.45));
+}
+/* Ombre portée de la fenêtre WebGL sur la photo */
+.hero__shadow {
+  position: absolute;
+  inset: 3% 2% 1%;
+  box-shadow: 0 46px 90px -24px rgba(0, 0, 0, 0.62), 0 12px 24px -12px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform-origin: 50% 40%;
+  transition: opacity 0.6s var(--ease-power3);
+}
+.hero.gl-on .hero__shadow {
+  opacity: 1;
+}
+.hero.gl-on .hero__svgwin {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+.hero__canvas {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-power3);
+}
+.hero.gl-on .hero__canvas {
+  opacity: 1;
+}
+.hw-sash--r {
+  transform-box: view-box;
+}
+
+.hero__cotes {
+  position: absolute;
+  inset: 0;
+  color: var(--neige);
+}
+.cote {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cote__line {
+  position: absolute;
+  background: currentColor;
+  opacity: 0.85;
+}
+.cote__txt {
+  position: relative;
+  padding: 2px 8px;
+  background: rgba(18, 20, 23, 0.62);
+  white-space: nowrap;
+  font-size: 0.6875rem;
+}
+.cote--h {
+  left: 0;
+  right: 0;
+  top: -34px;
+  height: 14px;
+}
+.cote--h .cote__line {
+  left: 0;
+  right: 0;
+  top: 7px;
+  height: 1px;
+  transform-origin: 0 50%;
+  transform: scaleX(var(--cote, 1));
+}
+.cote--h::before,
+.cote--h::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 14px;
+  background: currentColor;
+}
+.cote--h::before {
+  left: 0;
+}
+.cote--h::after {
+  right: 0;
+}
+.cote--v {
+  top: 0;
+  bottom: 0;
+  right: -38px;
+  width: 14px;
+}
+.cote--v .cote__line {
+  top: 0;
+  bottom: 0;
+  left: 7px;
+  width: 1px;
+  transform-origin: 50% 0;
+  transform: scaleY(var(--cote, 1));
+}
+.cote--v .cote__txt {
+  writing-mode: vertical-rl;
+  padding: 8px 2px;
+}
+.cote--v::before,
+.cote--v::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+}
+.cote--v::before {
+  top: 0;
+}
+.cote--v::after {
+  bottom: 0;
+}
+.cote--tag {
+  left: 0;
+  bottom: -30px;
+  justify-content: flex-start;
+  padding: 2px 8px;
+  background: rgba(18, 20, 23, 0.62);
+  color: var(--alu);
+  font-size: 0.6875rem;
+}
+.cote__corner {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  width: 30px;
+  height: 30px;
+  fill: var(--jaune);
+}
+.js .hero__cotes > * {
+  opacity: 0;
+}
+
+/* Texte */
+.hero__content {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: calc(clamp(76px, 10vh, 112px) + var(--safe-b));
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  grid-template-areas:
+    'kicker .'
+    'title lead'
+    'title actions';
+  align-items: end;
+  column-gap: clamp(24px, 5vw, 96px);
+  row-gap: 22px;
+}
+.hero .kicker {
+  grid-area: kicker;
+  --k: var(--alu);
+  text-shadow: 0 1px 14px rgba(18, 20, 23, 0.7);
+}
+.hero__title {
+  grid-area: title;
+  font-family: var(--f-display);
+  font-weight: 850;
+  font-stretch: 108%;
+  font-size: var(--fs-display);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--neige);
+  text-wrap: balance;
+  max-width: 11ch;
+}
+.hero__lead {
+  grid-area: lead;
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+  color: var(--alu);
+  max-width: 30em;
+}
+.hero__actions {
+  grid-area: actions;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.hero__foot {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: calc(22px + var(--safe-b));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--alu);
+}
+.hero__foot::before {
+  content: '';
+  position: absolute;
+  left: max(var(--margin), var(--safe-l) + 16px);
+  right: max(var(--margin), var(--safe-r) + 16px);
+  top: -14px;
+  height: 1px;
+  background: rgba(201, 205, 209, 0.3);
+}
+.hero__scroll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero__scroll-line {
+  position: relative;
+  width: 1px;
+  height: 34px;
+  overflow: hidden;
+  background: rgba(201, 205, 209, 0.25);
+}
+.hero__scroll-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--jaune);
+  animation: scrollcue 2.2s var(--ease-inout) infinite;
+}
+@keyframes scrollcue {
+  0% { transform: translateY(-100%); }
+  55% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+@media (max-width: 1023px) {
+  .hero__content {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'kicker' 'title' 'lead' 'actions';
+    row-gap: 18px;
+  }
+  .hero__title {
+    max-width: 12ch;
+  }
+  .hero__window {
+    right: 50%;
+    transform: translateX(50%);
+    width: min(78vw, 560px, calc((100svh - var(--header-h)) * 0.46));
+  }
+}
+@media (max-width: 767px) {
+  .hero__pin {
+    min-height: 620px;
+  }
+  .hero__window {
+    top: calc(var(--header-h) + 28px);
+    width: min(82vw, calc((100svh - var(--header-h)) * 0.4));
+  }
+  .hero__lead {
+    font-size: 1.0625rem;
+  }
+  .hero__content {
+    bottom: calc(70px + var(--safe-b));
+  }
+  .hero__foot .mono:first-child {
+    max-width: 22ch;
+  }
+  .cote--v {
+    right: -30px;
+  }
+}
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero__pin {
+    min-height: 420px;
+  }
+  .hero__window {
+    width: min(30vw, calc((100vh - var(--header-h)) * 0.7));
+    right: max(var(--margin), var(--safe-r) + 16px);
+    transform: none;
+  }
+  .hero__content {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'title' 'actions';
+    max-width: 62vw;
+    bottom: 56px;
+    row-gap: 14px;
+  }
+  .hero__lead,
+  .hero .kicker {
+    display: none;
+  }
+  .hero__title {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+  }
+}
+
+/* Avant l'apparition (JS actif) : le texte attend l'animation, sans flash */
+.js:not(.ready) :is(.hero__title, .hero .kicker, .hero__lead, .hero__actions, .hero__foot) {
+  opacity: 0;
+}

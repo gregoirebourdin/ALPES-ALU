@@ -1,0 +1,65 @@
+<section class="anatomie section section--light" id="anatomie" aria-labelledby="anatomie-titre" data-section="08" data-label="Anatomie d'une fenêtre" data-theme="light">
+  <div class="wrap anatomie__wrap">
+    <header class="section__head anatomie__head">
+      <p class="kicker"><span class="kicker__num">08 / 16</span><span>Anatomie d'une fenêtre</span></p>
+      <h2 id="anatomie-titre" class="h2" data-split="lines">La montagne mérite un beau cadre.</h2>
+      <p class="section__lead">Dormant, ouvrant, crémone : les mots de l'atelier, pour savoir de quoi on parle le jour du devis. Survolez ou touchez les repères.</p>
+    </header>
+
+    <div class="anatomie__body">
+      <div class="anatomie__figure">
+        <svg class="anat" viewBox="0 0 640 760" role="img" aria-labelledby="anat-titre">
+          <title id="anat-titre">Élévation d'une fenêtre aluminium à deux vantaux</title>
+          <defs>
+            <linearGradient id="an-alu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e6e8"/><stop offset=".5" stop-color="#c3c8cc"/><stop offset="1" stop-color="#d9dcdf"/></linearGradient>
+            <linearGradient id="an-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d6e3e8"/><stop offset="1" stop-color="#B9CED6"/></linearGradient>
+          </defs>
+          <g class="an-wall"><path d="M20 20H620V740H20ZM60 60V700H580V60Z" fill-rule="evenodd"/><path class="an-hatch" d="M20 740l-14 14M60 740l-14 14M100 740l-14 14M140 740l-14 14M180 740l-14 14M220 740l-14 14M260 740l-14 14M300 740l-14 14M340 740l-14 14M380 740l-14 14M420 740l-14 14M460 740l-14 14M500 740l-14 14M540 740l-14 14M580 740l-14 14M620 740l-14 14"/></g>
+          <g class="an-part" data-part="dormant"><path class="an-alu" d="M60 60H580V700H60ZM96 96V664H544V96Z" fill-rule="evenodd"/><path class="an-line" d="M60 60H580V700H60ZM96 96H544V664H96ZM60 60l36 36M580 60l-36 36M580 700l-36-36M60 700l36-36"/></g>
+          <g class="an-part" data-part="traverse"><path class="an-alu an-alu--dark" d="M60 664H580V700H60Z"/><path class="an-line" d="M60 664H580M60 700H580"/></g>
+          <g class="an-part" data-part="ouvrant">
+            <path class="an-alu" d="M100 100H322V660H100ZM142 142V618H280V142Z" fill-rule="evenodd"/>
+            <path class="an-alu" d="M318 100H540V660H318ZM360 142V618H498V142Z" fill-rule="evenodd"/>
+            <path class="an-line" d="M100 100H322V660H100ZM142 142H280V618H142ZM318 100H540V660H318ZM360 142H498V618H360Z"/>
+          </g>
+          <g class="an-part" data-part="montant"><path class="an-hi" d="M318 100h42v560h-42ZM280 100h42v560h-42Z"/></g>
+          <g class="an-part" data-part="vitrage"><path class="an-glass" d="M142 142H280V618H142ZM360 142H498V618H360Z"/><path class="an-glint" d="M160 260l60-60M172 300l80-80M380 520l70-70M392 556l90-90"/></g>
+          <g class="an-part" data-part="joints"><path class="an-joint" d="M145 145H277V615H145ZM363 145H495V615H363ZM99 99H541V661H99Z"/></g>
+          <g class="an-part" data-part="paumelles"><path class="an-hw" d="M92 170h14v44H92ZM92 546h14v44H92ZM534 170h14v44h-14ZM534 546h14v44h-14Z"/></g>
+          <g class="an-part" data-part="cremone"><path class="an-rod" d="M339 118V642"/><path class="an-hw" d="M333 108h12v20h-12ZM333 632h12v20h-12Z"/></g>
+          <g class="an-part" data-part="poignee"><path class="an-hw an-hw--dark" d="M330 360h18v52h-18Z"/><path class="an-lever" d="M339 404v74"/></g>
+          <g class="an-cotes"><path d="M60 40H580M60 32v16M580 32v16M54 46l12-12M574 46l12-12M600 60V700M592 60h16M592 700h16M594 66l12-12M594 706l12-12"/><text x="320" y="30" text-anchor="middle">L</text><text x="616" y="384" text-anchor="middle">H</text></g>
+        </svg>
+
+        <button type="button" class="spot" style="--x: 12.2%; --y: 35.5%" data-term="dormant" aria-describedby="an-desc"><span class="spot__n mono">1</span><span class="sr">Dormant</span></button>
+        <button type="button" class="spot" style="--x: 32%; --y: 15%" data-term="ouvrant" aria-describedby="an-desc"><span class="spot__n mono">2</span><span class="sr">Ouvrant</span></button>
+        <button type="button" class="spot" style="--x: 47.2%; --y: 25%" data-term="montant" aria-describedby="an-desc"><span class="spot__n mono">3</span><span class="sr">Montant</span></button>
+        <button type="button" class="spot" style="--x: 70%; --y: 89.5%" data-term="traverse" aria-describedby="an-desc"><span class="spot__n mono">4</span><span class="sr">Traverse</span></button>
+        <button type="button" class="spot" style="--x: 15.6%; --y: 25.3%" data-term="paumelles" aria-describedby="an-desc"><span class="spot__n mono">5</span><span class="sr">Paumelles</span></button>
+        <button type="button" class="spot" style="--x: 53%; --y: 57%" data-term="poignee" aria-describedby="an-desc"><span class="spot__n mono">6</span><span class="sr">Poignée</span></button>
+        <button type="button" class="spot" style="--x: 53%; --y: 15.6%" data-term="cremone" aria-describedby="an-desc"><span class="spot__n mono">7</span><span class="sr">Crémone</span></button>
+        <button type="button" class="spot" style="--x: 33.5%; --y: 47%" data-term="vitrage" aria-describedby="an-desc"><span class="spot__n mono">8</span><span class="sr">Vitrage</span></button>
+        <button type="button" class="spot" style="--x: 74.5%; --y: 71%" data-term="joints" aria-describedby="an-desc"><span class="spot__n mono">9</span><span class="sr">Joints</span></button>
+      </div>
+
+      <div class="anatomie__panel">
+        <p class="anatomie__index mono" aria-hidden="true"><span class="anatomie__i">1</span> / 9</p>
+        <div id="an-desc" class="anatomie__desc" aria-live="polite">
+          <h3 class="h3 anatomie__term">Dormant</h3>
+          <p class="anatomie__def">La partie fixe, scellée dans le mur : c'est l'encadrement de la fenêtre.</p>
+        </div>
+        <ol class="anatomie__list mono" aria-label="Les parties d'une fenêtre">
+          <li data-term="dormant" data-def="La partie fixe, scellée dans le mur : c'est l'encadrement de la fenêtre."><span>1</span>Dormant</li>
+          <li data-term="ouvrant" data-def="La partie mobile, qui s'ouvre. Sur une fenêtre à deux vantaux, l'un est principal, l'autre semi-fixe."><span>2</span>Ouvrant</li>
+          <li data-term="montant" data-def="Le profilé vertical de la menuiserie, à droite ou à gauche ; au centre, les deux vantaux se rejoignent."><span>3</span>Montant</li>
+          <li data-term="traverse" data-def="Le profilé horizontal du châssis : traverse haute, basse ou intermédiaire."><span>4</span>Traverse</li>
+          <li data-term="paumelles" data-def="Les charnières sur lesquelles l'ouvrant pivote pour s'ouvrir et se refermer."><span>5</span>Paumelles</li>
+          <li data-term="poignee" data-def="Elle actionne la crémone, pour ouvrir ou verrouiller la fenêtre."><span>6</span>Poignée</li>
+          <li data-term="cremone" data-def="Le mécanisme de fermeture logé dans l'ouvrant : des tringles verrouillent la fenêtre en haut et en bas."><span>7</span>Crémone</li>
+          <li data-term="vitrage" data-def="Le verre : simple, double ou feuilleté, selon la pièce et l'usage."><span>8</span>Vitrage</li>
+          <li data-term="joints" data-def="Ils assurent l'étanchéité entre l'ouvrant et le dormant, et tout autour du vitrage."><span>9</span>Joints</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

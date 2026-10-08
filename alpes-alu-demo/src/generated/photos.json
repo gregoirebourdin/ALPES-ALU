@@ -1,0 +1,493 @@
+{
+ "hero": {
+  "alt": "Un grand vitrage suspendu à une grue au-dessus des toits, guidé par l'équipe Alpes Alu, montagnes en arrière-plan.",
+  "w": 2048,
+  "h": 1336,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAABwBQCdASogABUAPu1mqk2ppaQiMAgBMB2JYgCnTYyAvGsmRQ9GvHOL21rBI5430/BkVspAAP6QkRyncB6uh1yPEwAiC9DyoIFd/8MFpTNsmJ5rCc3j0K+lnM6DgECHj6gd3IrenjBf1qaUYMSc4XduOZACuOL5BLB1mKdwH3MmjWwjTw9oV1FP21/TqBYvxv+7Qlv4cJeoz3MovW8Bj+LO4QdUgPoyOQu4ipd9d06D1wEe9TpfnWpNdb4UU0bfVszo9mlg932TMAAA",
+  "color": "#080808",
+  "mobile": {
+   "w": 942,
+   "h": 1484,
+   "widths": [
+    640,
+    942
+   ],
+   "lqip": "data:image/webp;base64,UklGRmwBAABXRUJQVlA4IGABAADwCQCdASogADIAPuleqE2pJSQiMBv8ASAdCWIAs7NVWAU9dCZqgEVOQRPJaPPozw7tI/urS1pMBh/uxkyLyltpuzTh+4+QFUuubbhDIqyVdLv2PJ8CZn+gAP7ejwF1oiWWG2XkRlg3fwN/T2oHSOVm/3w4SzaoeW/hLsuVuefr2/ig6Jjlaow9sae+LKOv1b2qwacx5+0bYl9pB6cn/RRT1iTWd5We3lje5FM9DFnwvFcXihmhDZHcarAxRK81U9jbPUIAysgQd8ScTi052kIiZNhM8odEZFIA3cWX0a5+9OenoxaF4iFS5zfQePCpvPwwqOD3mNuAQ1lUGN7+SE7A+GuuVrC4XFST6ME/Eor3AM4oxolyIQxzo3nG74uNg4Q/0qqGfjAlHiLM/wgTRsIYvM0G0yFWpzFyJaH7cRlsKFKJuC0LpPhC9MroZLlKZaEDl7OU4AeCEl7m6oKIfJAA"
+  }
+ },
+ "m-fenetres": {
+  "alt": "Fenêtre de rénovation sur mesure posée dans un mur en pierre.",
+  "w": 1200,
+  "h": 1202,
+  "widths": [
+   640,
+   1200
+  ],
+  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABwBQCdASogACAAPu1mqk4ppaQiMAgBMB2JZQC2G6gCfsL/MR4O94dxbL7m7cG+e96cc3AAAP38JM77VQ7nr0b8X6KoQD/bM4YqEcEiInUwqpJzBDhOksYOT5HIsJh90Kf7xip+C3Am/glT+TXixVAEqHmgE0MEVAbpj82ZjCEOjBZDPz9K+G5toROOJ9nHq8o5L4/ca2zjXEZpzwpgEgKEUgtcNlsj24sNTuG9fmoaaIiD+72qf8RpbOBPyNAeV4AAAA==",
+  "color": "#f8f8f8"
+ },
+ "m-baies": {
+  "alt": "Châssis composé aluminium ouvert sur des sommets enneigés.",
+  "w": 1139,
+  "h": 960,
+  "widths": [
+   640,
+   1139
+  ],
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAwBQCdASogABsAPu1wr1IppiQiqAgBMB2JQBfnCtjx8n0oPiThgyBT/OtrtBK+kzXDRgD+6/barBY73BzR01zwjiCoWd0w97n1gIx3+KFfdcWp91jGcRm84kIe4Vl1y8rMTB+BxiYyM49k28DHNOgxpkbOCKnCJpZf1aIMV/5nltHMk5Wnin6SUd13BuLJifB3oWBWOvm2vJh/ZnBPEceKIojIDc1AAAA=",
+  "color": "#584838"
+ },
+ "m-volets": {
+  "alt": "Volet roulant blanc posé en façade, baissé devant une large ouverture.",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwBACdASogABgAPu12s1MpqCSiqAgBMB2JZwDKtBEXcI1nItQOJ/v1K6b1PaKAAP54seKt38dKMpj6oDtQI1X6OveWn0PTl9Xe/xiFeSIGfd6vCi0/zl4X9FXe32xc94NC/sf0SvSyOn66Th3VA71sk4U6AbYMAAA=",
+  "color": "#c8c8d8"
+ },
+ "m-portes": {
+  "alt": "Porte de garage sectionnelle anthracite encadrée par un mur en pierre.",
+  "w": 1200,
+  "h": 1600,
+  "widths": [
+   640,
+   1200
+  ],
+  "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAADQBgCdASogACsAPu1qr06ppiSiKrgMATAdiWUAw+gLK1z9Z/8bM9VcaWdH3ikPMnU26gu2Mi1AKZ94yotsggAA/sOWl5Ob2OBsm+dQjZreI2VEyZ+Z6JZgb1HTL9C8+sJ0OFkADGNOclkEbYtAx6vTHTzl8M+pp8YfAvVzXcNKWHdk8xE5W9WGutG/j350eaD3C4PAFgmVCxHhaSgamtUM3vBUZzNZrw2Pkl3kgoVj4wxcG+4AAA==",
+  "color": "#f8f8f8"
+ },
+ "m-portails": {
+  "alt": "Portail coulissant posé à l'entrée d'une allée, falaise en arrière-plan.",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABwBQCdASogABgAPt1WpE2opKOiN/qoARAbiUAYmwNsjhUyJZL9HX75qH+BLgdlU4PZcHyAAPukzwZguYvlQL5hN4/Rxe3xbjx8uBhdlGed3gLWmHm7bkSysWet32Js0sdk6zqNsPPy2LXO8BxXxKUBqfiFVtxqzDgjiXbE6V1gT9whvalJ1zdb4N5V4BJZZ4zKHaqt8LpNgAAA",
+  "color": "#080808"
+ },
+ "m-verandas": {
+  "alt": "Pergola vitrée posée contre la façade d'une maison de montagne.",
+  "w": 2048,
+  "h": 1151,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADwBQCdASogABIAPu1mpU2ppaMiMBgMATAdiWMAuzMvwafQCQLYIMX/C9W2rrZbBFsSO9c3BaQuwAD+7VgiDsiLUrjm9t0VgHCbn8l3Nb600Lg9SxdsesOjfrEvz4+dDQD06W9dTQkYEpG5aHI0VvmtXoLbxxzJHfEglwsnD3zUxN4WAxSENFzpRMZSs2Bq3gsk2uOw1V63UjXm3EAXUAAA",
+  "color": "#080808"
+ },
+ "m-escaliers": {
+  "alt": "Escalier extérieur galvanisé à marches en caillebotis et double rampe.",
+  "w": 1920,
+  "h": 2560,
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "lqip": "data:image/webp;base64,UklGRgoBAABXRUJQVlA4IP4AAADQBgCdASogACsAPu1orE4ppiSiKqwBMB2JQBer9cpRYjikBU4EQNWmsHQ4bmNNSnY8I0aSW78XuPN95s+c0AAA/n2KEkhRP1WrdXfGpW++aF9LrPqp3WTFigQDSSD/UXaUULH5VOHZuw6lFrk/U9vb+O69imJKXKnEQL3JcKz7nfHTaEG6wVbeJdUkdhPiyuJtapsnSoKg9T/IvPZGcnFd24i8+xSbSNMGZYF4di9gEXZ0Xf1TUtKr/yPtRFlwb9hnT7IdxRhr6ucOcW7e1aTDhP2G4WaCJAnZavI+uXuD4aQqWhDVecgMS9HPOhJaZJUbA9/lWi0JVST/22AAAA==",
+  "color": "#080808"
+ },
+ "m-vitrerie": {
+  "alt": "Vitrage séparatif sur mesure entre une cuisine et une pièce à vivre.",
+  "w": 2048,
+  "h": 1536,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAACwBQCdASogABgAPuVgpk2pJaOiN/VYASAciWQAnQbwJ9OVcY1qrh3BmEEsi1s5p8hKJW4a6wAA/u+GCqgspA5YETw6lyjBjrAFTbki4XyUAxAa8YqbyqWqp/S9cySwiFs0LDPTlcYatkI3dOuZ49rqIEi7AMJtDD2Gv7ozliTBVoMtTUOHMCWU0x3EMIGBQ/07usLjHeSyT6d7pBl4ozxTHJEniTonk3Az7RyzE/Vlfx5fRzKB49Dt9e0iJX4gVIN96hcNVUY6fSR2NNYCxNZ57ZX0UydzWqBjZTIPFAA=",
+  "color": "#080808"
+ },
+ "m-serrurerie": {
+  "alt": "Porte de service en aluminium posée au bout d’un couloir.",
+  "w": 1200,
+  "h": 1600,
+  "widths": [
+   640,
+   1200
+  ],
+  "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAQBgCdASogACsAPu1ko02ppaMiMAqpMB2JQBibCiOr1uV3zm4kau1M8eC0BMjlfJgpDxQpSCn1twAA/vZtNendW0mHB9nS1Fj8fHzmTRozEhteMmZGsplAGTIugeXjZfsRb2+OCrj5HAEfArZ5dLgJCR2rbqe7d0e16zH1i7Gq1RATl3G4nvJnRpyfywLEwD5qBQNJt6MIfrHbzcDG6lmYz6gUovKznTyhWBPD4AZUe0hEC4AAAA==",
+  "color": "#d8d8d8"
+ },
+ "pose": {
+  "alt": "Trois poseurs guident un vitrage suspendu à la grue au-dessus d’une verrière.",
+  "w": 1599,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1599
+  ],
+  "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAAAQBgCdASogABgAPu1mq08ppaOiKA1RMB2JYgCdM19GW73HWheGSA2LtDho4AVfgNT8CDDwmjzCdgAA/vCbVBrEDK2nWB/6Vs2QFQS0BPQkYfRWnFEXn+nlVoDHQUVrPt5GFgDKXP+wX5NDz7ZB4R3xGkDbsxA5Vp3X2pbEyKLl4wTPUjorW+wHiCgKDz6eZR64hwnMcfdOdvrN6+79WgAfLzuckE2a4pk47RrrmmneBz1PCMFacxoRlRp0smcDnus+UkgAAAA=",
+  "color": "#080808"
+ },
+ "equipe": {
+  "alt": "L'équipe Alpes Alu en tenue de travail devant la porte jaune de l'atelier.",
+  "w": 1900,
+  "h": 983,
+  "widths": [
+   640,
+   1280,
+   1900
+  ],
+  "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAACQBQCdASogABEAPu1iqlAppSOisBgIATAdiWoAtuiU8G4CN+FLPIwcnNfPCJDvjJH98GWEAAD+7YJ+3WKN0tHlotwGl/QQL5UEwh0etOwRu7uv32MrfJZjiAMHrPYiJxRPGC06vEy4+fgjaO5PcfvZT0RLXJLayy0bgl18DsdoDV5jz3LSt7qmv7FQWcY2kbrKNk5LPJNsnJZ5F7Z1wzkjZnYWdFrOHolp6Y7hek4t8NmSgLhEiQAA",
+  "color": "#f8e818",
+  "duotone": [
+   640,
+   1280,
+   1900
+  ]
+ },
+ "atelier-etabli": {
+  "alt": "Deux techniciens au travail sur un établi de l'atelier, un mètre ruban et un marteau posés devant eux.",
+  "w": 1984,
+  "h": 1488,
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABwBgCdASogABgAPu1eq02ppKQiMBgMATAdiUAWwzZOMwN0C2w+ukSJPu9EkPgCxHMk+VSO59jZRXbYYAAA8QrZc5+qgoMc2tgIPL2+0C6IBd0ttoj2AALN4nd0FldhMdZ62Rb3VyDjZN5mPSKuA7qyKlQReWb7XKvIoCnnee1toGNAjrScYywpO+oEE4fFToi0HkQ/NwVIlgER/2dMl5E7xqdHz1hKMTp0F7H3Cnc8g0E7IW+CqE7U8NZnJbb7aRooqma9IrcuE8xjgjjVtDJU8AA=",
+  "color": "#080808",
+  "duotone": [
+   640,
+   1280,
+   1920
+  ]
+ },
+ "atelier-cadres": {
+  "alt": "Assemblage de cadres de fenêtres aluminium sur une table de l'atelier.",
+  "w": 2048,
+  "h": 1362,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAAAQBQCdASogABUAPu1iqU2ppaOiMAgBMB2JQBajYThM4jAg4i8WUz/9G4h5VPPO7hUgAP7r/Hp+7EFPNVY20ZskC7wQtXd6Ka3bRLmCqDkXVHRc5KPOGL1v6WlsH4Pu8pze/FfA0cqYVUwC7KD4qfZa45S2RIq6Az4ZfPT2uwEUHW9k0VTEl9JHpIpjE9vyZzHEqg8m4JaTtjNMJfhtyKGQG0v6aM3g5YI4l8AA",
+  "color": "#f8f8f8"
+ },
+ "devanture": {
+  "alt": "La façade de l'atelier Alpes Alu aux Sablonnières, un utilitaire siglé garé devant.",
+  "w": 2048,
+  "h": 1195,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADQBACdASogABMAPu1kqU2ppaQiMAgBMB2JQBgFBHzx1/yzIGbylLSzmlfX2hMaAAD+6rb/SDoeY2MJ+oSdtwhGfxxRhr52+HftoZyeprh7/Brp8bbh+vx1NNnIt8ug8Bln/y1z5euSObb068BnggkVDNP2Joi5Ux6u0/0BfjsI+JtYXG8rS9dmQAA=",
+  "color": "#e8e8e8"
+ },
+ "flotte": {
+  "alt": "Les véhicules Alpes Alu garés devant le bâtiment, montagnes au fond.",
+  "w": 2048,
+  "h": 1362,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACQBQCdASogABUAPu1krE6ppaQiKA1RMB2JQBajargwBLRWI6AWcw0QoQjDe8vjgbheRd6n4AD8GBucevnbVnB0OJj68R8TmjPZ7HF+/F44xCHJoVOlP3tnRkb+D7V37aR1Wi0mhrxkL4IhzRjcUnn8/URNlli7ynJ8ovGfHTLC4PfwKwc1ldpmln0F8OZXE43CbTH7Q11lFTVPtF3TKwb0I6DUAAAA",
+  "color": "#f8f8f8"
+ },
+ "enseigne": {
+  "alt": "L'enseigne Alpes Alu au-dessus de la porte sectionnelle jaune de l'atelier.",
+  "w": 1362,
+  "h": 2048,
+  "widths": [
+   640,
+   1280
+  ],
+  "lqip": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4IAIBAAAQBwCdASogADAAPu1cq04ppKQiMBqqqTAdiWwAuzNyCqi4alC8AI+/hy+EVyUUIzhqpdhWQykSJaBfH2XuaXvfAAD++6de5eSOaouRg/oJUSkUT6uVvW0vV7VXa5N8nOYWYCzC8ZHSbANrejIcVh812/WQ/QmPq/naj6IYfHPrVz2YXCi7CwxieLcZyycb+sY5Nf1lDNo6AX9AYqtqZxhFZhQG5YuvY3RcWd+NwDZMDwBbWrlEVkpqRjsbcEIOAkFA6hkhzI4jP7mIVRxuEJuVesE6bXvzDa7DuYEadjob1R0oGHy7rgAqi00XTmcsPvAaPcxopiwHlOWudw6bp87auAA=",
+  "color": "#e8e8f8"
+ },
+ "equipe-camions": {
+  "alt": "Trois membres de l'équipe devant les utilitaires Alpes Alu.",
+  "w": 2048,
+  "h": 1027,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAADQBACdASogABAAPu1iqk2ppaQiMAgBMB2JbACdBrJy3/gj2Q4O8N5ia1m2A56mAAD++69n/5UE5+S/NgNwt/P7bLMnt898nJT9/GkuvrD9GB9MvmAXAjHCju9iFPHw7ClRmILUZLfc+ozzAcI8w7t1SsxRlPJQK0JjudG0tgTf+k0CCWVh0Yr/2w38iII58qy7vyy6h85IcvZ6lDVdhsqpmcuh8jRwDiLapOdgesbqlr37SmAAAA==",
+  "color": "#d8e8f8"
+ },
+ "pierre": {
+  "alt": "Portrait de Pierre Melquiond, dirigeant.",
+  "w": 1362,
+  "h": 1679,
+  "widths": [
+   640,
+   1280
+  ],
+  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAAAQBwCdASogACcAPu1eqU8ppKOiNVQIATAdiUAWnWZNvFLqyvb1aqM133tx6Eko3I4MyJMH4YmsCCtotxvjPhvrgAD++y3IkQqk+ic8OLv+hFj8EuF5BhmaPvSbP3aml8dh/k4ZESSswV5RpIbjYmgKSQx50q8nR5fUOqqif6MHAxTyUtHlc2ks0YdonKYirgs4MzsX8pHxZ4G8LD4dfzVMHZfDcyyjfldf7PRGeZiGrmpvt+M+X/NVm1NMH9+tBtzDfA8ZcxkUQ/hzXhFy4dWGG/kg+6scwvEJI78yb5weLmCsGAAAAA==",
+  "color": "#e8e8e8"
+ },
+ "victorien": {
+  "alt": "Portrait de Victorien Melquiond, dirigeant.",
+  "w": 1362,
+  "h": 1679,
+  "widths": [
+   640,
+   1280
+  ],
+  "lqip": "data:image/webp;base64,UklGRiABAABXRUJQVlA4IBQBAABwBwCdASogACcAPu1qq1AppiOisBVYATAdiWYAnTLyClh5lRt9dv/LnVN47bi0n9H9jaxPuWl5h8DSIcbIaQMSwyzsEAD++i4IHnyZkF73P1o8qjj2i6Ee4/MVnCftHD6piiTr2w2LGMFNcWYi2J6+1fpX/2nxUkaFvwnvvUbkoYwlwv1C1Swr4vnb2t1nHKxs7RTHv1oPJ504MYgQUwLLx2mqZ4OUuPVTPxEhk+GNcEj90/x/T9UOx6LcL3DEvI+XYQjUO+DYeVVZtN35FRtm8agxCeVH920CGuiffwjXrMOIxCyQrYVOnMHz2L68M8zKjkpV/whDouVmCleurz+Ur92Uj3yBW1wgPcWqE8aGJyjCAAA=",
+  "color": "#e8f8f8"
+ },
+ "volet-coulissant": {
+  "alt": "Porte-fenêtre coulissante équipée d’un volet roulant électrique à mi-course.",
+  "w": 2048,
+  "h": 2051,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACwBQCdASogACAAPu1or1AppaSiqAqpMB2JYwC7BvAEAj6oiei/cP4CrXdg2nFWRtyVDgFAUYAA/tz5fXIkyy7O6Bb/Mrl2BKvDztNp1Mtjm74S6sxqiSkW/yW1Vscvng16M9D2ZkF3F8worD8VQOwkNWC6iybHLWBRTYp2Cwvk7wIXD/8PU7xjkCHUdt0Z61R0FJ1G48BEtmnvfX63cAAA",
+  "color": "#080808"
+ },
+ "equipe-rge": {
+  "alt": "L'équipe Alpes Alu devant l'atelier, avec les logos Alpes Alu et Qualibat RGE.",
+  "w": 1900,
+  "h": 1425,
+  "widths": [
+   640,
+   1280,
+   1900
+  ],
+  "lqip": "data:image/webp;base64,UklGRhQBAABXRUJQVlA4IAgBAABwBgCdASogABgAPu1mqk8ppaOiKA1RMB2JbACuOYsPALsza5AML2sPwzasRDunbJSKfKdTP+4m+FWUFgAA/u2Cft13kUDn3mvDsv2qy1nq48D+vLDv2c2Q5Q/wbQ+/4ZnJve17TiESG3BsV9d4PU7d+2+CC/A0TqxcAoZh+EAH8Nuas4HLYuv7mlTR71MrK3u//fWjqDIGqL9ibODuzSC9TOTCzHRN906OR7vRh+P6IxMb2ZWz4PuxLYZ1H5tRK45U0H5D6LGWb5A0FJGCGZS8YoORXERqMwEbtjYipyVcutCnSwuZPlLjkI2XK460ewX6Qj/Wfm24sXSw4rgs5SbiCA7iNtgAAAA=",
+  "color": "#f8f8f8"
+ },
+ "g-baie-jardin": {
+  "alt": "Baie vitrée toute hauteur ouverte sur un jardin d'automne.",
+  "w": 2048,
+  "h": 1537,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAAAwBQCdASogABgAPu1ur1IppiQiqAgBMB2JYwC06ETuoDfO/2fE6a1/7x3uiPl0Ql9KFAD+0CLdHq04RHvRNIEmjsehVayhMoxSaWSaU6mA9tI3YPdYut4VEwNGi9A7vwiQMzDE+ml250vH2DuO9rym8h3iDbDIvZdDWtmy68PFCBHPY1T+ySCx3flXQJpPKrAYxCbunlid4Zz+nFVj0jPG7DW0rvVXfP/Kb/PA5dVK7odvI/rh3k0vUeQAAA==",
+  "color": "#080808"
+ },
+ "g-angle": {
+  "alt": "Angle vitré sur jardin, vu de l'intérieur.",
+  "w": 1599,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1599
+  ],
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAADQBQCdASogABgAPuFapE2opSOiN/qoARAcCUAWIaCQXa4H/J3t+9eJ7Dmim0RPwNzK+LZpVWiAAP7vR5VYEiGGXTV7v58vkL/TBE+SgmPbPYhx3+CBmOc40zfXVMXkWRuo7KOkOcedMGzyi5tw/KdKAARR5v7rGUD46dFOG8VN7+T9L8mRg6PHlIcVPcaxbUQO+w9Y1BENVcMg4A04q3IGt7+gMIM4r178UxHWAAA=",
+  "color": "#281808"
+ },
+ "g-coulissant": {
+  "alt": "Fenêtre coulissante posée en rénovation, ouverte sur une terrasse.",
+  "w": 1599,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1599
+  ],
+  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACwBQCdASogABgAPu1oq0+ppiOiMBgIATAdiWMAsR+OyksSMlnlhx+SHdR9tdSzrqW0cqwvhmAA/ueNdfVoWlpy7gIzb4/Xwn5IkjUmfwr4pL9X9GGZry27YST7d3DKuRis0+qKlfv/h2p+VIxXiX/aNdhuAFjXkgZjjdf7mzeOTCFbliuVWTSSXvy1Jhpd7mwuJPZlsDcHPtnKjOQEKy+LyeVsbaIzcU1Xh2hFkJWKHI9qyzaS1/dVPeuxpsnnoBkgAA==",
+  "color": "#080808"
+ },
+ "g-rideau-bois": {
+  "alt": "Rideau métallique aspect bois et porte de service assortie.",
+  "w": 1900,
+  "h": 1425,
+  "widths": [
+   640,
+   1280,
+   1900
+  ],
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAABwBQCdASogABgAPu1krVAppSQisBgIATAdiWQAxNgNsd9BfnVrR+bR7mALP0gilPrrLxnAAPhh6o3O3PyJWOLPJLFDBq+TTSYhgJ4YUTLFLY9d0RWJXGnVaLtX/aVn5IdBcIxXc46RbHDV+6q2x3b9VsEQEChM3nmhzK34XPSYm80rPU90k34q7u2Vp4rKKHQnrI8hxA8HIi0yMn6KLszpRB0krHEZdc13PUowgAA=",
+  "color": "#f8f8f8"
+ },
+ "g-entree": {
+  "alt": "Entrée vitrée d'un bâtiment de services, sous son auvent.",
+  "w": 2048,
+  "h": 1536,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBQCdASogABgAPu1or1CppaQiqAqpMB2JYwDGgbHB/PyCju4sXv1jOjaFU3vgf8uYYAD6XFU8L9tk+YYBd4FPAFOTs9a7aXgot1vQvYBIyoLHa0RQqitEd7O5zbcevpLd7UmFRLFSTcNa0bqymvrYNcgQhYZqeAfD5yqtwnNDGfvPyZMo3+pLblfYFbhT1q+iyP0m2iu+64rAk0IxSHe035AX0AAA",
+  "color": "#080808"
+ },
+ "g-porte-entree": {
+  "alt": "Porte d'entrée anthracite à hublots vitrés.",
+  "w": 1200,
+  "h": 1600,
+  "widths": [
+   640,
+   1200
+  ],
+  "lqip": "data:image/webp;base64,UklGRigBAABXRUJQVlA4IBwBAACwBwCdASogACsAPu1krU+ppSQiKrgMATAdiWgAsR+bfnW/nj/ZkFzBewys3e28biOdCDtXkQWFL79tQ1biraTGslru5L8AAP72cH7PXwIGf5J7lyznd1W0rLg7q4JvOfvWEmRinPlsTYttwoeNslHCLG0fHxlgmBe3zqLRbNnpgrsC56+eLkw+/GXJgUudMW054yV8F1QUy78RqJGacVjUTGi445UnT6VkmzuabYHCEv9rD9D4d9ck4EBLXtr0GhdN2d0Teo0IBEWiIQVR0CuZw7RSJNzptNhXldgNEOrJz5/iBmZCyb1n6hVL8GECatdnHtLBmurcmdRid7GkWD5BStYApaSWAkDzC/lKkgxpB7tsSsVNZeKyMAAAAA==",
+  "color": "#181818"
+ },
+ "g-portail-double": {
+  "alt": "Portail plein anthracite, montagne en arrière-plan.",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADQBACdASogABgAPu1ip02ppSMiMAgBMB2JYgDKAB6Gs/InKtNxUW+BF+oDPniy3gDrcW9h6OGnKpJbQIt3o9Sbfz5eGmenWTj+Ga36LCqPl1wwyPRmhrDSh3b4BtClhKtWIHtWzUPkzhfub4vTuTbJBMJvwdcHj1f46+eUhkPSAqKUIszFm0qAPKsQEVnZ+kImN10hNqkxHnXPRXFkUAAA",
+  "color": "#080808"
+ },
+ "g-portillon": {
+  "alt": "Portillon à lames verticales posé entre deux piliers.",
+  "w": 1599,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1599
+  ],
+  "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAQBQCdASogABgAPu1qq08ppiOiMBgIATAdiWMAwzQ0cI2yI8iQJsmP+/W7rIIHHN8gAP2dWqYu5KmoAvjRILw/GcK8wqFdMSKmseV0aGQ1GcGNf/Jqd/iXhCQl6qW6MOEb1zUI6oTBm7frPsK1qKh0o7wj6Ddk57sEMFW8bqLm97OMFxJBMSgZnVA9jmeFKP15Y3MfX20W/qNG+gp7Jq+zAAA=",
+  "color": "#181818"
+ },
+ "g-rampe-chalet": {
+  "alt": "Rampe d'escalier métallique dans un chalet à charpente bois.",
+  "w": 2048,
+  "h": 1537,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2048
+  ],
+  "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAABQBgCdASogABgAPu1ipk4ppSMiMBgMATAdiWYAnTKDMHAktZX3TNr4fBkU79mAvq4gUlaxNmHSwBP+IAD+4yxYGg550MDogX0gndodIFeh5JYd2ZDMFSs+GLbXH853/u7133zua7Ap1OOGeM3mVLPzKnaTQSx/+jDrw+XFaS+Q/mBEB6xoMCLfmbDm/BxkJUvX1QBCereIAVtVZp2pKFZkh4L10nSCySxCouSkEvfHr7Y3iBFQf1BVvO6oZ6sw+4z1Dj0SHpMyQ4QA",
+  "color": "#080808"
+ },
+ "g-rampe-ext": {
+  "alt": "Rampe et escalier extérieurs sur mesure, face à la vallée.",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAQBQCdASogABgAPu1iqE2ppaOiMAgBMB2JQBjPgpdVr0YHQ0gMy1+W72FKem/1r9nAAP6jczSuFpt+Z5LBPvsE902WQ/Mx3vYZrMvlckmYK29w/qdjLIsAoLQIIBdkOaruTilwxgdaTAGBI5EOyRCMyL/BxAvVVh/cTC8p9/BWOGDxd4nREFfHXbiRQBOuX4KswmCe6TchfA3pAWVhiWSascfcvacuAAA=",
+  "color": "#e8e8e8"
+ },
+ "g-escalier-facade": {
+  "alt": "Escalier extérieur en acier fixé sur une façade en bois.",
+  "w": 1220,
+  "h": 1388,
+  "widths": [
+   640,
+   1220
+  ],
+  "lqip": "data:image/webp;base64,UklGRhYBAABXRUJQVlA4IAoBAABQBwCdASogACQAPu1cp02ppKOiNVgIATAdiUAXZn2GYxJbqymR6FAlJ9wXmWpVG6cvX/2dqwoTwTgbo2OC/tcQsfo4AP7fYjjB8HDynMJ7WRB/Wt/VmhU2XeoZXcaAj0blfABXZixV7vn9NfgHz7XX7RhmABhWDRuoEhU6AZRl7f3ba/9Y0xvpNjdh61GzrqfYXeDH+LYlMigtu0SJiIDsQVH7vWcyBTfd6PTiQr93NiHRQQK6Pcf9ojqwTu99G4gmcgtaIXwox8OoOosTrC9P9MwwZUR5HJZFfIjVcGBV95gtuR/4xn85aVA6kqTmjHnvl75fhoh/Ddnx95GeSlXo1VTMN7QAH4AAAA==",
+  "color": "#080808"
+ },
+ "g-local-velo": {
+  "alt": "Local vélo en structure acier à panneaux découpés.",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBQCdASogABgAPu1qrVEppaQiqAqpMB2JYgC1GyGExL912W4QTH0hgo6PH6Ds073FSADN8P/Ts3oryJQg8LWkRQv8piNaJOktfPjeXu007lKS/07U/DCO8vsDX1UNszZewQvT0j9fZcTQPlobq3rMIu2OalS6LGf5JKn/YVKkmc+8itffiNApIFZKNSDyv2B4PO2DEmb5MaN2DklfVFu6tonUiys/rUYefIG6yBtAjVWAAAA=",
+  "color": "#080808"
+ },
+ "g-verriere": {
+  "alt": "Verrière d'atelier noire dans un intérieur en bois.",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAACQBQCdASogABgAPuVgpk2pJaOiN/VYASAciWQAqPmywsIxpQ0Bu0h/3dotD4fQr/Bw3yyUgAD+7Mcm73d0KhU1ASufvgivtkx0l1j401eNS4Etk5wg+cSPDGX2kseg8rQzTRCZYFFSU9mHPzocpro9wIGeb2LyLdI7PqzJXUDSk0AUJuavyHJnuaz+5cHrxfWalElP+uTBj3HppP72NFghxHow3LNMchYIcnQENMceRmCmg0wO6dmrU841diHm2Amuc0I5aWfTm3MUWdLSmeeAAAA=",
+  "color": "#080808"
+ },
+ "g-veranda": {
+  "alt": "Véranda métallique en cours de pose contre une maison.",
+  "w": 1900,
+  "h": 1069,
+  "widths": [
+   640,
+   1280,
+   1900
+  ],
+  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAAAQBQCdASogABIAPu1iqU2ppaOiMAgBMB2JZQDE2CB94cO07SF29TNVxe5wKQ/Jh9WAAP7dRJ5zP0mBTU1LepVoWp66cIs4yuM3tI5TDVvfTzVrFCqL7af7DkzXctm2zD3qjFkY12hE+cISjpVtU1d8hs4UIcgBn1YFzbszyDUMGuZO/ME3SzjxkdRIpi225It2tfaJ0JCwC4wND5q3DGAA",
+  "color": "#f8f8f8"
+ },
+ "g-grue-immeuble": {
+  "alt": "Grue en position devant un immeuble pour une pose de vitrage.",
+  "w": 1200,
+  "h": 1600,
+  "widths": [
+   640,
+   1200
+  ],
+  "lqip": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAAAwBwCdASogACsAPu1kq04ppaQiKqwBMB2JZgCdL/9lwBM/O/yBS6VwRJMJWN2rtVkhTi7TF/5Ym7mtRdDjXsMxnAAA/FFHpdR9vSl6T4z4X/w88KNsWOsGfo/jCbwCyYZ/X2AXr4jBY7fM0uDd/EQ0zP2475RUOlrHu2Cl+XODE+y/LyeQ6W17J8leBGd69m1/NMcIx8cKWI8FvBHVtdC8giOnRk6UVOyb4UF0lyAmLQ2LDPw6ifpNfZ5c7pcPtnaZhk73XrXvnGn0MC+tPPUDD39Fwi29hYUJRiEN6UkAQvE7UsEChPqoJH5wAA==",
+  "color": "#68a8d8"
+ },
+ "rallye-1": {
+  "alt": "La voiture de rallye n° 211 aux couleurs de ses sponsors, rallye de Haute-Provence 2022.",
+  "w": 2560,
+  "h": 1832,
+  "widths": [
+   640,
+   1280,
+   1920,
+   2560
+  ],
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBQCdASogABcAPuVeqE2pJSQiMAwBIByJQBibBFjHLkZuKRAnUExqdqm1rj4XbkP6QAD+5cxz4lWnm7xW0KVEMDLjyn3/WhDOWCQAlyqye9/H+YKePvOpBbM3AoPc8zApwe1ki5SQNePbvgaK6LWOnSu+0uKM3mwu2i4Mv6C6VizdT2rcAAAA",
+  "color": "#888888",
+  "credit": "Frédéric Turion"
+ },
+ "rallye-2": {
+  "alt": "La voiture n° 211 dans un virage, rallye de Haute-Provence 2022.",
+  "w": 1504,
+  "h": 1004,
+  "widths": [
+   640,
+   1280,
+   1504
+  ],
+  "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQBQCdASogABUAPu1iqE2ppaOiMAgBMB2JZwDA3CHaXCKGY3iP2ULg8yq8NGD3eOigAP7pPyY4ResmjDwnE5LQOEqoV44KkDqZTx9LHaz3hNmUX5x1mXNA38kOTzpoqHFZCII7yX7HS7TEUJ9gvlHgAAA=",
+  "color": "#080808",
+  "credit": "Frédéric Turion"
+ }
+}

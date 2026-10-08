@@ -1,0 +1,39 @@
+<div class="grain" aria-hidden="true"></div>
+
+<div class="cursor" aria-hidden="true">
+  <svg class="cursor__frame"><use href="#viseur"></use></svg>
+  <span class="cursor__dot"></span>
+  <span class="cursor__label mono">Voir</span>
+</div>
+
+<div class="tape" aria-hidden="true">
+  <div class="tape__ruler"></div>
+  <div class="tape__cursor">
+    <svg class="tape__corner" viewBox="0 0 24 24"><use href="#corniere-angle"></use></svg>
+    <span class="tape__value mono"><span class="tape__num">02</span><span class="tape__total"> / 16</span></span>
+  </div>
+</div>
+
+<div class="shutter" aria-hidden="true">
+  <div class="shutter__curtain"></div>
+  <div class="shutter__coffre">
+    <span class="shutter__axe"></span>
+    <span class="shutter__label mono"></span>
+  </div>
+</div>
+
+<div class="lightbox" id="visionneuse" role="dialog" aria-modal="true" aria-label="Visionneuse des réalisations" hidden>
+  <div class="lightbox__stage">
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="" decoding="async">
+      <figcaption class="lightbox__caption">
+        <span class="lightbox__cat mono"></span>
+        <span class="lightbox__text"></span>
+      </figcaption>
+    </figure>
+  </div>
+  <p class="lightbox__count mono" aria-live="polite"></p>
+  <button type="button" class="lightbox__btn lightbox__close"><svg aria-hidden="true"><use href="#i-fermer"></use></svg><span class="sr">Fermer la visionneuse</span></button>
+  <button type="button" class="lightbox__btn lightbox__prev"><svg aria-hidden="true"><use href="#i-chevron-g"></use></svg><span class="sr">Photo précédente</span></button>
+  <button type="button" class="lightbox__btn lightbox__next"><svg aria-hidden="true"><use href="#i-chevron-d"></use></svg><span class="sr">Photo suivante</span></button>
+</div>

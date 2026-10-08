@@ -1,0 +1,59 @@
+<section class="zone section section--dark" id="zone" aria-labelledby="zone-titre" data-section="13" data-label="Zone d'intervention" data-theme="dark">
+  <div class="wrap zone__wrap">
+    <header class="zone__head">
+      <p class="kicker"><span class="kicker__num">13 / 16</span><span>Zone d'intervention</span></p>
+      <h2 id="zone-titre" class="h2" data-split="lines">Du Briançonnais au Guillestrois.</h2>
+      <p class="section__lead">Nous vous accueillons dans nos bureaux, et nous nous déplaçons dans le grand Briançonnais, le Pays des Écrins et le Guillestrois pour voir votre projet sur place.</p>
+      <ul class="zone__list">
+        <li><span class="zone__n mono">A</span><span>Grand Briançonnais</span></li>
+        <li><span class="zone__n mono">B</span><span>Pays des Écrins</span></li>
+        <li><span class="zone__n mono">C</span><span>Guillestrois</span></li>
+      </ul>
+      <p class="zone__note mono">Schéma de principe, sans échelle : ce n'est pas une carte exacte.</p>
+    </header>
+
+    <figure class="zone__map">
+      <svg class="map" viewBox="0 0 1000 1000" role="img" aria-labelledby="map-titre">
+        <title id="map-titre">Carte stylisée : L'Argentière-la-Bessée au centre, le grand Briançonnais au nord, le Pays des Écrins à l'ouest et le Guillestrois au sud-est</title>
+        <defs>
+          <radialGradient id="map-halo"><stop offset="0" stop-color="#F4D20D" stop-opacity=".16"/><stop offset="1" stop-color="#F4D20D" stop-opacity="0"/></radialGradient>
+          <radialGradient id="map-fade" cx=".5" cy=".52" r=".62"><stop offset=".55" stop-color="#121417" stop-opacity="0"/><stop offset="1" stop-color="#121417" stop-opacity="1"/></radialGradient>
+        </defs>
+        <include src="partials/generated/map-contours.svg"></include>
+        <g class="map__rivers">
+          <path class="river" pathLength="1" d="M560 0 548 140 520 300 500 520 532 700 585 860 610 1000"/>
+          <path class="river river--small" pathLength="1" d="M500 520 400 470 300 440 170 400 40 360"/>
+          <path class="river river--small" pathLength="1" d="M548 140 440 90 320 30 240 0"/>
+          <path class="river river--small" pathLength="1" d="M585 860 700 840 830 800 1000 790"/>
+        </g>
+        <rect width="1000" height="1000" fill="url(#map-fade)"/>
+        <g class="map__zones">
+          <circle class="zone-halo" cx="560" cy="170" r="170" fill="url(#map-halo)"/>
+          <circle class="zone-halo" cx="270" cy="450" r="190" fill="url(#map-halo)"/>
+          <circle class="zone-halo" cx="660" cy="830" r="160" fill="url(#map-halo)"/>
+        </g>
+        <g class="map__rays">
+          <path class="ray" pathLength="1" d="M500 520C520 400 560 300 560 186"/>
+          <path class="ray" pathLength="1" d="M500 520C430 500 350 470 286 456"/>
+          <path class="ray" pathLength="1" d="M500 520C540 640 600 740 650 814"/>
+        </g>
+        <g class="map__pins">
+          <g class="pin" transform="translate(560 170)"><circle r="7"/><text x="16" y="-10">A · GRAND BRIANÇONNAIS</text></g>
+          <g class="pin" transform="translate(270 450)"><circle r="7"/><text x="-16" y="-14" text-anchor="end">B · PAYS DES ÉCRINS</text></g>
+          <g class="pin" transform="translate(660 830)"><circle r="7"/><text x="16" y="24">C · GUILLESTROIS</text></g>
+        </g>
+        <g class="map__home" transform="translate(500 520)">
+          <circle class="home-pulse" r="18"/>
+          <circle class="home-pulse home-pulse--2" r="18"/>
+          <path class="home-mark" d="M-12-12h24v24h-24Z"/>
+          <path class="home-corner" d="M-12-12h24v6h-18v18h-6Z"/>
+          <text class="home-label" x="26" y="6">L'ARGENTIÈRE-LA-BESSÉE</text>
+          <text class="home-sub" x="26" y="26">ATELIER DES SABLONNIÈRES</text>
+        </g>
+        <g class="map__north" transform="translate(910 90)">
+          <path d="M0-34 10 0 0-8-10 0Z"/><text y="22" text-anchor="middle">N</text>
+        </g>
+      </svg>
+    </figure>
+  </div>
+</section>
